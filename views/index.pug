@@ -1,0 +1,124 @@
+extends layout
+
+block content
+  nav
+    ul
+      li 
+        a(href='#about') 
+          i(class="material-icons") home
+      li 
+        a(href='#skills') 
+          i(class="material-icons") code
+      li 
+        a(href='#projects') 
+          i(class="material-icons") computer
+      li 
+        a(href='#contact') 
+          i(class="material-icons") email
+
+  #about.shadow
+
+    .blurb
+      h1 Hi! I'm Kelsey. I'm a full-stack web developer.
+      h2 Building useful, accessible, and well-thought-out applications is my passion.
+      p I have 3+ years of analytical business experience. Previously, I worked as a public tax accountant where I consulted with clients to develop long-term wealth management strategies. <strong>I take pride in providing services that make people's lives easier.</strong>
+      p As a developer, I'm excited about using technology and data to improve <strong>educational opportunities</strong> for underserved communities and enhance <strong>environmental conservation</strong> efforts.
+      p I believe that the tech community should be open and inclusive, and I'm eager to contribute to projects big or small with folks who feel the same way. If that sounds good to you, 
+        strong
+          a(href='#contact') get in touch.
+
+  
+  #skills
+    .row
+      .container
+        .card
+          .heading Programming Languages
+          table
+            tr
+              td JavaScript
+            tr
+              td Ruby
+            tr
+              td SQL
+      .container
+        .card
+          .heading Web Development
+          table
+            tr
+              td HTML5
+            tr
+              td CSS3
+            tr
+              td Sass/Stylus
+            tr
+              td Slim/Pug
+            tr
+              td JQuery
+            tr
+              td Bootstrap 
+      .container
+        .card
+          .heading Technologies & Frameworks
+          table
+            tr
+              td Ruby on Rails
+            tr
+              td Sinatra
+            tr
+              td AJAX
+            tr
+              td JSON
+      .container
+        .card
+          .heading Databases & Tools
+          table
+            tr
+              td Git/GitHub
+            tr
+              td PostgreSQL
+            tr
+              td ActiveRecord
+            tr
+              td RSpec
+            tr
+              td Jasmine
+            tr
+              td Heroku
+            tr
+              td Travis CI
+
+  #projects
+    .img-container
+      img(src='../images/seespotgo.png')
+      .desc
+        |seespotgo
+    .img-container
+      img(src='../images/boarddom.png')
+      .desc
+        |boarddom
+    .img-container
+      img(src='../images/pomodoro.png')
+      .desc
+        |pomodoro timer
+    .img-container
+      img(src='../images/calculator.png')
+      .desc
+        |calculator
+    .img-container
+      img(src='../images/wiki.png')
+      .desc
+        |wikipedia search
+    .img-container
+      img(src='../images/quote.png')
+      .desc
+        |quote generator
+
+  #contact
+    #contact-container.shadow
+      h2 kelseyedelstein@gmail.com
+      a(href='https://www.linkedin.com/in/kedels')
+        i.fa.fa-linkedin-square(aria-hidden='true')
+      a(href='https://www.github.com/kedskeds')
+        i.fa.fa-github(aria-hidden='true')
+      a(href='https://www.codepen.io/kedskeds')
+        i.fa.fa-codepen(aria-hidden='true')
