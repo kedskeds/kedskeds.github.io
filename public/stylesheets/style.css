@@ -114,6 +114,9 @@ nav ul li a:hover {
   width: 30%;
   padding: 10px;
 }
+#projects a {
+  text-decoration: none;
+}
 #projects img {
   width: 100%;
   height: auto;
