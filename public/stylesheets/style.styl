@@ -23,6 +23,37 @@ a:hover
 h1
   font-family: heading-font
 
+.mobile
+  display: none
+
+button
+  margin: auto
+  width: 100%
+  padding: 10px 20px
+  border: none
+  text-align: center
+  background: white
+  font-family: heading-font
+  // text-transform: uppercase
+  font-size: 140%
+  border-radius: 5px
+  cursor: pointer
+
+button:focus 
+  outline: none  
+
+.divider
+  text-align: center
+  i
+    padding: 10px
+    background: cl-blue
+    color: white
+    border-radius: 50%
+    text-align: center
+    font-size: 300%
+    border: 5px solid white
+    margin-bottom: 5px
+
 nav
   border-right: 5px solid black
   border-left: 5px solid black
@@ -57,7 +88,7 @@ nav
   padding: 20px
 
   .blurb
-    h1, h2
+    h1, h2, h3
       text-align:center
     p
       font-size: 110%
@@ -107,10 +138,12 @@ nav
     td
       font-weight: bold
       padding: 5px 20px
+  .container:last-child
+    margin-bottom: 50px
 
 #projects
   clear: both
-  padding-top: 20px
+  // padding-top: 20px
   
   .img-container
     float: left
@@ -134,17 +167,19 @@ nav
     padding: 10px
     background: #2C3E50
 
+  .img-container:last-child
+    margin-bottom: 50px
 #contact
   clear: both
   text-align: center
-  padding-top: 30px
+  // padding-top: 30px
   color: white
   
   #contact-container
     margin: auto
     width: 80%
     background: #F4D03F
-    margin-top: 50px
+    // margin-top: 50px
     margin-bottom: 50px
     padding: 50px 0px
   
@@ -203,8 +238,31 @@ nav
   #projects
     .img-container
       width: 100%
+  #contact
+    h2
+      font-size: 130%
 
-@media screen and (max-width: 400px)
+@media screen and (max-width: 500px)
+  .project-heading
+    border-top: 2px solid white
+    text-align: center
+    text-transform: uppercase
+    font-size: 120%
+    font-family: heading-font
+    font-weight: bold
+    color: white
+    padding: 10px
+    background: #2C3E50
+  #projects 
+    .img-container
+      padding: 0
+      a
+        img
+          display: none
+  .mobile
+    display: block
+  .hidden
+    display: none
   nav
     display: none
   body

@@ -16,6 +16,37 @@ a:hover {
 h1 {
   font-family: 'Roboto', sans-serif;
 }
+.mobile {
+  display: none;
+}
+button {
+  margin: auto;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 140%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+.divider {
+  text-align: center;
+}
+.divider i {
+  padding: 10px;
+  background: #4db6ac;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 300%;
+  border: 5px solid #fff;
+  margin-bottom: 5px;
+}
 nav {
   border-right: 5px solid #000;
   border-left: 5px solid #000;
@@ -50,7 +81,8 @@ nav ul li a:hover {
   padding: 20px;
 }
 #about .blurb h1,
-#about .blurb h2 {
+#about .blurb h2,
+#about .blurb h3 {
   text-align: center;
 }
 #about .blurb p {
@@ -105,9 +137,11 @@ nav ul li a:hover {
   font-weight: bold;
   padding: 5px 20px;
 }
+#skills .container:last-child {
+  margin-bottom: 50px;
+}
 #projects {
   clear: both;
-  padding-top: 20px;
 }
 #projects .img-container {
   float: left;
@@ -131,17 +165,18 @@ nav ul li a:hover {
   padding: 10px;
   background: #2c3e50;
 }
+#projects .img-container:last-child {
+  margin-bottom: 50px;
+}
 #contact {
   clear: both;
   text-align: center;
-  padding-top: 30px;
   color: #fff;
 }
 #contact #contact-container {
   margin: auto;
   width: 80%;
   background: #f4d03f;
-  margin-top: 50px;
   margin-bottom: 50px;
   padding: 50px 0px;
 }
@@ -201,8 +236,34 @@ nav ul li a:hover {
   #projects .img-container {
     width: 100%;
   }
+  #contact h2 {
+    font-size: 130%;
+  }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
+  .project-heading {
+    border-top: 2px solid #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 120%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    background: #2c3e50;
+  }
+  #projects .img-container {
+    padding: 0;
+  }
+  #projects .img-container a img {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
   nav {
     display: none;
   }

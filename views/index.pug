@@ -21,13 +21,16 @@ block content
     .blurb
       h1 Hi! I'm Kelsey. I'm a full-stack web developer.
       h2 Building useful, accessible, and well-thought-out applications is my passion.
-      p I have 3+ years of analytical business experience. Previously, I worked as a public tax accountant where I consulted with clients to develop long-term wealth management strategies. <strong>I take pride in providing services that make people's lives easier.</strong>
-      p As a developer, I'm excited about using technology and data to improve <strong>educational opportunities</strong> for underserved communities and enhance <strong>environmental conservation</strong> efforts.
-      p I believe that the tech community should be open and inclusive, and I'm eager to contribute to projects big or small with folks who feel the same way. If that sounds good to you, 
-        strong
-          a(href='#contact') get in touch.
+      button.mobile.expand Read More
+      .desktop.hidden
+        p I have 3+ years of analytical business experience. Previously, I worked as a public tax accountant where I consulted with clients to develop long-term wealth management strategies. <strong>I take pride in providing services that make people's lives easier.</strong>
+        p As a developer, I'm excited about using technology and data to improve <strong>educational opportunities</strong> for underserved communities and enhance <strong>environmental conservation</strong> efforts.
+        p I believe that the tech community should be open and inclusive, and I'm eager to contribute to projects big or small with folks who feel the same way. If that sounds good to you, 
+          strong
+            a(href='#contact') get in touch.
 
-  
+  .mobile.divider 
+    i(class="material-icons") code
   #skills
     .row
       .container
@@ -87,38 +90,54 @@ block content
             tr
               td Travis CI
 
+  .mobile.divider 
+    i(class="material-icons") computer
   #projects
     .img-container
+      .mobile.project-heading
+        |seespotgo
       a(href='https://github.com/kedskeds/SeeSpotGo')
         img(src='../images/seespotgo.png')
-        .desc
-          |seespotgo
+      .desc.hidden
+        |seespotgo
     .img-container
+      .mobile.project-heading
+        |boarddom
       a(href='https://github.com/kedskeds/BoardDom')
         img(src='../images/boarddom.png')
-        .desc
-          |boarddom
+      .desc.hidden
+        |boarddom
     .img-container
+      .mobile.project-heading
+        |pomodoro timer
       a(href='http://codepen.io/kedskeds/full/xEmJPQ/')
         img(src='../images/pomodoro.png')
-        .desc
-          |pomodoro timer
+      .desc.hidden
+        |pomodoro timer
     .img-container
+      .mobile.project-heading
+        |calculator
       a(href='https://codepen.io/kedskeds/full/qaQVJB/')
         img(src='../images/calculator.png')
-        .desc
-          |calculator
+      .desc.hidden
+        |calculator
     .img-container
+      .mobile.project-heading
+        |wikipedia search
       a(href='http://codepen.io/kedskeds/full/EyoYWY/')
         img(src='../images/wiki.png')
-        .desc
-          |wikipedia search
+      .desc.hidden
+        |wikipedia search
     .img-container
+      .mobile.project-heading
+        |quote generator
       a(href='https://codepen.io/kedskeds/full/rLjdZa/')
         img(src='../images/quote.png')
-        .desc
-          |quote generator
+      .desc.hidden
+        |quote generator
 
+  .mobile.divider 
+    i(class="material-icons") email
   #contact
     #contact-container.shadow
       h2 kelseyedelstein@gmail.com
