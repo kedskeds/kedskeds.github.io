@@ -8,10 +8,10 @@ body {
   background: linear-gradient(#cfd8dc, #fff); /* Standard syntax */
 }
 a {
-  color: #000;
+  color: #fff;
 }
 a:hover {
-  color: #fff;
+  color: #000;
 }
 h1 {
   font-family: 'Roboto', sans-serif;
@@ -33,6 +33,18 @@ button {
 }
 button:focus {
   outline: none;
+}
+.project-description,
+#projects .desc,
+.project-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 120%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px;
+  background: #2c3e50;
 }
 .divider {
   text-align: center;
@@ -85,8 +97,9 @@ nav ul li a:hover {
 #about .blurb h3 {
   text-align: center;
 }
-#about .blurb p {
-  font-size: 110%;
+#about .blurb p,
+#about .blurb ul {
+  font-size: 120%;
 }
 #skills {
   clear: both;
@@ -143,35 +156,29 @@ nav ul li a:hover {
 #projects {
   clear: both;
 }
-#projects .img-container {
+#projects .outer-container {
+  text-align: center;
+  width: 33%;
   float: left;
-  width: 30%;
-  padding: 10px;
+}
+#projects .outer-container:last-child {
+  margin-bottom: 50px;
+}
+#projects .img-container {
+  width: 100%;
 }
 #projects a {
   text-decoration: none;
 }
 #projects img {
-  width: 100%;
-  height: auto;
+  width: 95%;
 }
 #projects .desc {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 120%;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: #fff;
-  padding: 10px;
-  background: #2c3e50;
-}
-#projects .img-container:last-child {
-  margin-bottom: 50px;
+  margin: 0px 10px 10px 10px;
 }
 #contact {
   clear: both;
   text-align: center;
-  color: #fff;
 }
 #contact #contact-container {
   margin: auto;
@@ -187,10 +194,10 @@ nav ul li a:hover {
 #contact i {
   padding: 0px 20px;
   font-size: 300%;
-  color: #000;
+  color: #fff;
 }
 #contact i:hover {
-  color: #fff;
+  color: #000;
 }
 .shadow {
   -webkit-box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75);
@@ -202,8 +209,8 @@ nav ul li a:hover {
   transition: all 0.2s ease;
 }
 @media screen and (max-width: 950px) {
-  #projects .img-container {
-    width: 45%;
+  #projects .outer-container {
+    width: 50%;
   }
   #skills .container {
     float: left;
@@ -230,33 +237,22 @@ nav ul li a:hover {
   #about .blurb {
     width: 100%;
   }
-  #about .img-container {
-    display: none;
-  }
-  #projects .img-container {
-    width: 100%;
-  }
-  #contact h2 {
-    font-size: 130%;
-  }
-}
-@media screen and (max-width: 500px) {
   .project-heading {
     border-top: 2px solid #fff;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 120%;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    padding: 10px;
-    background: #2c3e50;
   }
-  #projects .img-container {
+  #projects .outer-container {
+    width: 100%;
     padding: 0;
   }
-  #projects .img-container a img {
+  #projects .outer-container .img-container {
+    margin: 0;
+    padding: 0;
+  }
+  #projects .outer-container .img-container a img {
     display: none;
+  }
+  #contact h2 {
+    font-size: 150%;
   }
   .mobile {
     display: block;

@@ -15,10 +15,10 @@ body
   background: linear-gradient(cl-lightgray, white); /* Standard syntax */
 
 a
-  color: black
+  color: white
   
 a:hover 
-  color: white
+  color: black
 
 h1
   font-family: heading-font
@@ -34,13 +34,22 @@ button
   text-align: center
   background: white
   font-family: heading-font
-  // text-transform: uppercase
   font-size: 140%
   border-radius: 5px
   cursor: pointer
 
 button:focus 
   outline: none  
+
+.project-description
+  text-align: center
+  text-transform: uppercase
+  font-size: 120%
+  font-family: heading-font
+  font-weight: bold
+  color: white
+  padding: 10px
+  background: #2C3E50
 
 .divider
   text-align: center
@@ -90,8 +99,8 @@ nav
   .blurb
     h1, h2, h3
       text-align:center
-    p
-      font-size: 110%
+    p, ul
+      font-size: 120%
 
 #skills
   clear: both
@@ -109,8 +118,6 @@ nav
     padding: 0
     width: 200px
     min-height: 100px
-    // border: 3px solid black
-    // border-radius: 5px
 
   .heading
     font-family: heading-font
@@ -143,43 +150,36 @@ nav
 
 #projects
   clear: both
-  // padding-top: 20px
   
-  .img-container
+  .outer-container
+    text-align: center
+    width: 33%
     float: left
-    width: 30%
-    padding: 10px
+    
+  .outer-container:last-child
+    margin-bottom: 50px
+      
+  .img-container
+    width: 100%
   
   a
     text-decoration: none
 
   img
-    width: 100%
-    height: auto
+    width: 95%
   
   .desc
-    text-align: center
-    text-transform: uppercase
-    font-size: 120%
-    font-family: heading-font
-    font-weight: bold
-    color: white
-    padding: 10px
-    background: #2C3E50
-
-  .img-container:last-child
-    margin-bottom: 50px
+    @extend .project-description
+    margin: 0px 10px 10px 10px
+  
 #contact
   clear: both
   text-align: center
-  // padding-top: 30px
-  color: white
   
   #contact-container
     margin: auto
     width: 80%
     background: #F4D03F
-    // margin-top: 50px
     margin-bottom: 50px
     padding: 50px 0px
   
@@ -190,10 +190,10 @@ nav
   i 
     padding: 0px 20px
     font-size: 300%
-    color: black
+    color: white
     
   i:hover 
-    color: white
+    color: black
           
 .shadow
   -webkit-box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75)
@@ -207,8 +207,8 @@ nav
 
 @media screen and (max-width: 950px)
   #projects
-    .img-container
-      width: 45%
+    .outer-container
+      width: 50%
   #skills
     .container
       float: left
@@ -228,37 +228,26 @@ nav
       width: 100%
       float: left
   
-
 @media screen and (max-width: 650px)
   #about
     .blurb
       width: 100%
-    .img-container
-      display: none
-  #projects
-    .img-container
+  .project-heading
+    @extend .project-description
+    border-top: 2px solid white
+  #projects 
+    .outer-container
       width: 100%
+      padding: 0
+      .img-container
+        margin: 0
+        padding: 0
+        a
+          img
+            display: none
   #contact
     h2
-      font-size: 130%
-
-@media screen and (max-width: 500px)
-  .project-heading
-    border-top: 2px solid white
-    text-align: center
-    text-transform: uppercase
-    font-size: 120%
-    font-family: heading-font
-    font-weight: bold
-    color: white
-    padding: 10px
-    background: #2C3E50
-  #projects 
-    .img-container
-      padding: 0
-      a
-        img
-          display: none
+      font-size: 150%
   .mobile
     display: block
   .hidden
