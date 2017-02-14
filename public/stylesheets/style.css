@@ -1,11 +1,15 @@
 body {
   padding: 30px 30px 50px 80px;
   font: 14px "Open Sans", sans-serif;
-  background: #cfd8dc; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#cfd8dc, #fff); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#cfd8dc, #fff); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#cfd8dc, #fff); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#cfd8dc, #fff); /* Standard syntax */
+  background: #cfd8dc /* For browsers that do not support gradients */;
+  background: -webkit-linear-gradient(#cfd8dc, #fff) /* For Safari 5.1 to 6.0 */;
+  background: -o-linear-gradient(#cfd8dc, #fff) /* For Opera 11.1 to 12.0 */;
+  background: -moz-linear-gradient(#cfd8dc, #fff) /* For Firefox 3.6 to 15 */;
+  background: linear-gradient(#cfd8dc, #fff) /* Standard syntax */;
+}
+.page-container {
+  margin: auto;
+  max-width: 1300px;
 }
 a {
   color: #fff;
@@ -13,8 +17,10 @@ a {
 a:hover {
   color: #000;
 }
-h1 {
-  font-family: 'Roboto', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: 'Roboto Slab', sans-serif;
 }
 .mobile {
   display: none;
@@ -26,10 +32,11 @@ button {
   border: none;
   text-align: center;
   background: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 140%;
+  font-size: 110%;
   border-radius: 5px;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 button:focus {
   outline: none;
@@ -38,13 +45,39 @@ button:focus {
 #projects .desc,
 .project-heading {
   text-align: center;
-  text-transform: uppercase;
   font-size: 120%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: bold;
-  color: #fff;
   padding: 10px;
-  background: #2c3e50;
+  color: #2c3e50;
+}
+.overlay {
+  position: absolute;
+  text-align: left;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 99%;
+  width: 95%;
+  margin: auto;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  background-color: #c8d1d0;
+}
+.overlay .overlay-padding {
+  padding: 0px 20px;
+}
+.overlay .overlay-padding h2 {
+  font-size: 120%;
+  margin-bottom: 0;
+}
+.overlay .overlay-padding h3 {
+  font-size: 100%;
+  margin: 0;
+}
+.overlay .overlay-padding p,
+.overlay .overlay-padding li {
+  font-size: 90%;
 }
 .divider {
   text-align: center;
@@ -60,6 +93,7 @@ button:focus {
   margin-bottom: 5px;
 }
 nav {
+  z-index: 999;
   border-right: 5px solid #000;
   border-left: 5px solid #000;
   background: #1c2833;
@@ -79,23 +113,63 @@ nav ul li {
   margin-bottom: 20px;
 }
 nav ul li a {
+  text-decoration: none;
   color: #fff;
 }
 nav ul li a:hover {
   color: #4db6ac;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 90px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: -5px;
+  left: 130%;
+  opacity: 0;
+  -webkit-transition-property: opacity /* Safari */;
+  -webkit-transition-duration: 1s /* Safari */;
+  -webkit-transition-delay: 0.3s /* Safari */;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-delay: 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #000 transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 #about {
   margin: auto;
-  width: 80%;
-  background: #2ecc71;
-  min-height: 250px;
+  min-height: 400px;
   margin-bottom: 50px;
   padding: 20px;
+  background: url("../images/Death_to_Stock_Equinox_9.jpg") top right no-repeat;
+  background-size: 1500px;
 }
-#about .blurb h1,
-#about .blurb h2,
-#about .blurb h3 {
-  text-align: center;
+#about .blurb {
+  opacity: 0.8;
+  background: #4db6ac;
+  max-width: 400px;
+  float: left;
+  padding: 30px;
 }
 #about .blurb p,
 #about .blurb ul {
@@ -104,43 +178,30 @@ nav ul li a:hover {
 #skills {
   clear: both;
 }
-#skills .row {
-  width: 100%;
-}
 #skills .container {
   width: 25%;
   margin: auto;
   float: left;
 }
 #skills .card {
-  background: #fff;
   margin: auto;
   padding: 0;
-  width: 200px;
+  width: 250px;
   min-height: 100px;
-}
-#skills .heading {
-  font-family: 'Roboto', sans-serif;
-  color: #1c2833;
-  font-size: 130%;
-  font-weight: bold;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  border-bottom: 2px solid #1c2833;
-  margin-bottom: 0;
-  padding: 10px 0px;
 }
 #skills table {
   width: 100%;
   border-collapse: collapse;
 }
-#skills table tr {
+#skills table tr:first-child {
+  text-align: center;
+  font-size: 130%;
+  background: #c8d1d0;
   color: #000;
-  background: #f2f3f4;
+  border-bottom: 2px solid #000;
 }
-#skills table tr:nth-child(even) {
-  background: #e5e7e9;
+#skills table tr:first-child td:first-child {
+  height: 50px;
 }
 #skills table tr:hover {
   color: #222;
@@ -161,6 +222,16 @@ nav ul li a:hover {
   width: 33%;
   float: left;
 }
+#projects .img-container {
+  position: relative;
+}
+#projects .img-container:hover .overlay {
+  opacity: 0.8;
+  background: #fff;
+}
+#projects .img-container:hover img {
+  transition: 0.5s ease-in-out;
+}
 #projects .outer-container:last-child {
   margin-bottom: 50px;
 }
@@ -168,9 +239,11 @@ nav ul li a:hover {
   width: 100%;
 }
 #projects a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: #000;
 }
 #projects img {
+  transition: 0.5s ease;
   width: 95%;
 }
 #projects .desc {
@@ -179,11 +252,12 @@ nav ul li a:hover {
 #contact {
   clear: both;
   text-align: center;
+  opacity: 0.9;
 }
 #contact #contact-container {
   margin: auto;
   width: 80%;
-  background: #f4d03f;
+  background: #4db6ac;
   margin-bottom: 50px;
   padding: 50px 0px;
 }
@@ -200,15 +274,15 @@ nav ul li a:hover {
   color: #000;
 }
 .shadow {
-  -webkit-box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75);
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-box-shadow: 6px 7px 14px -5px rgba(0,0,0,0.44);
+  -moz-box-shadow: 6px 7px 14px -5px rgba(0,0,0,0.44);
+  box-shadow: 6px 7px 14px -5px rgba(0,0,0,0.44);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1050px) {
   #projects .outer-container {
     width: 50%;
   }
@@ -224,6 +298,26 @@ nav ul li a:hover {
   }
 }
 @media screen and (max-width: 800px) {
+  #about {
+    padding: 0px;
+    width: 100%;
+    min-height: 0;
+    background: none;
+  }
+  #about .blurb {
+    opacity: 1;
+    float: none;
+    margin: auto;
+    padding: 20px;
+  }
+  #projects .overlay-padding h2,
+  #projects .overlay-padding h3 {
+    font-size: 90%;
+  }
+  #projects .overlay-padding p,
+  #projects .overlay-padding li {
+    font-size: 80%;
+  }
   #skills .container {
     width: 50%;
     float: left;
@@ -234,11 +328,11 @@ nav ul li a:hover {
   }
 }
 @media screen and (max-width: 650px) {
-  #about .blurb {
-    width: 100%;
-  }
   .project-heading {
     border-top: 2px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    background: #2c3e50;
   }
   #projects .outer-container {
     width: 100%;
@@ -248,7 +342,7 @@ nav ul li a:hover {
     margin: 0;
     padding: 0;
   }
-  #projects .outer-container .img-container a img {
+  #projects .outer-container .img-container img {
     display: none;
   }
   #contact h2 {

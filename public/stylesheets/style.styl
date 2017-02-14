@@ -1,26 +1,32 @@
-heading-font = 'Roboto', sans-serif
+heading-font = 'Roboto Slab', sans-serif
+body-font = "Open Sans", sans-serif
 cl-blue = #4DB6AC
 cl-darkgray = #1C2833
+cl-medium-gray = #c8d1d0
 cl-lightgray = #CFD8DC
 cl-tr-hover = white
 cl-green = #2ECC71
 
+
 body
   padding: 30px 30px 50px 80px
-  font: 14px "Open Sans", sans-serif
-  background: cl-lightgray; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(cl-lightgray, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(cl-lightgray, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(cl-lightgray, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(cl-lightgray, white); /* Standard syntax */
+  font: 14px body-font
+  background: cl-lightgray /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(cl-lightgray, white) /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(cl-lightgray, white) /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(cl-lightgray, white) /* For Firefox 3.6 to 15 */
+  background: linear-gradient(cl-lightgray, white) /* Standard syntax */
 
+.page-container
+  margin: auto
+  max-width: 1300px
 a
   color: white
   
 a:hover 
   color: black
 
-h1
+h1, h2, h3
   font-family: heading-font
 
 .mobile
@@ -33,23 +39,47 @@ button
   border: none
   text-align: center
   background: white
-  font-family: heading-font
-  font-size: 140%
+  font-size: 110%
   border-radius: 5px
   cursor: pointer
+  text-transform: uppercase
+  font-weight: bold
 
 button:focus 
   outline: none  
 
 .project-description
   text-align: center
-  text-transform: uppercase
   font-size: 120%
   font-family: heading-font
   font-weight: bold
-  color: white
   padding: 10px
-  background: #2C3E50
+  color: #2C3E50
+
+.overlay 
+  position: absolute
+  text-align: left
+  top: 0
+  left: 0
+  right: 0
+  height: 99%
+  width: 95%
+  margin: auto
+  opacity: 0
+  transition: .5s ease-in-out
+  background-color: cl-medium-gray
+  
+  .overlay-padding
+    padding: 0px 20px
+  
+    h2
+      font-size: 120%
+      margin-bottom: 0
+    h3
+      font-size: 100%
+      margin: 0
+    p, li
+      font-size: 90%
 
 .divider
   text-align: center
@@ -64,6 +94,7 @@ button:focus
     margin-bottom: 5px
 
 nav
+  z-index: 999
   border-right: 5px solid black
   border-left: 5px solid black
   background: cl-darkgray
@@ -83,62 +114,93 @@ nav
       margin-bottom: 20px
       
       a
+        text-decoration: none
         color: white
       
       a:hover
         color: #4DB6AC
 
+.tooltip 
+  position: relative
+  display: inline-block
+
+.tooltip .tooltiptext 
+  visibility: hidden
+  width: 90px
+  background-color: black
+  color: #fff
+  text-align: center
+  border-radius: 6px
+  padding: 5px 0
+  position: absolute
+  top: -5px
+  left: 130%
+  opacity: 0
+  -webkit-transition-property: opacity /* Safari */
+  -webkit-transition-duration: 1s /* Safari */
+  -webkit-transition-delay: .3s /* Safari */
+  transition-property: opacity
+  transition-duration: 1s
+  transition-delay: .3s
+
+.tooltip .tooltiptext::after 
+  content: ""
+  position: absolute
+  top: 50%
+  right: 100%
+  margin-top: -5px
+  border-width: 5px
+  border-style: solid
+  border-color: transparent black transparent transparent
+  
+.tooltip:hover .tooltiptext 
+  visibility: visible
+  opacity: 1
+
 #about
   margin: auto
-  width: 80%
-  background: cl-green
-  min-height: 250px
+  min-height: 400px
   margin-bottom: 50px
   padding: 20px
+  background: url("../images/Death_to_Stock_Equinox_9.jpg") top right no-repeat
+  background-size: 1500px
+  // background-size:cover
+  // background-attachment: fixed
 
   .blurb
-    h1, h2, h3
-      text-align:center
+    opacity: .8
+    background: cl-blue
+    max-width: 400px
+    float: left
+    padding: 30px
+
     p, ul
       font-size: 120%
 
 #skills
   clear: both
-  .row
-    width: 100%
-
   .container
     width: 25%
     margin: auto
     float: left
 
   .card
-    background: white
     margin: auto
     padding: 0
-    width: 200px
+    width: 250px
     min-height: 100px
-
-  .heading
-    font-family: heading-font
-    color: cl-darkgray
-    font-size: 130%
-    font-weight: bold
-    text-transform: uppercase
-    width: 100%
-    text-align: center
-    border-bottom: 2px solid cl-darkgray
-    margin-bottom: 0
-    padding: 10px 0px
 
   table
     width: 100%
     border-collapse: collapse
-    tr
+    tr:first-child
+      text-align: center
+      font-size: 130%
+      background: cl-medium-gray
       color: black
-      background: #F2F3F4
-    tr:nth-child(even) 
-      background: #E5E7E9
+      border-bottom: 2px solid black
+      td:first-child
+        height: 50px
     tr:hover
       color: #222222
       background: cl-tr-hover
@@ -155,6 +217,14 @@ nav
     text-align: center
     width: 33%
     float: left
+  .img-container
+    position: relative
+  .img-container:hover 
+    .overlay 
+      opacity: .8
+      background: white
+    img 
+      transition: .5s ease-in-out
     
   .outer-container:last-child
     margin-bottom: 50px
@@ -163,9 +233,11 @@ nav
     width: 100%
   
   a
-    text-decoration: none
+    text-decoration: underline
+    color: black
 
   img
+    transition: .5s ease
     width: 95%
   
   .desc
@@ -175,11 +247,13 @@ nav
 #contact
   clear: both
   text-align: center
+  opacity: .9
   
   #contact-container
     margin: auto
     width: 80%
-    background: #F4D03F
+    background: cl-blue
+    // background: #F4D03F
     margin-bottom: 50px
     padding: 50px 0px
   
@@ -196,16 +270,16 @@ nav
     color: black
           
 .shadow
-  -webkit-box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75)
-  -moz-box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75)
-  box-shadow: 10px 10px 36px -5px rgba(0,0,0,0.75)
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-        
+  -webkit-box-shadow: 6px 7px 14px -5px rgba(0,0,0,0.44)
+  -moz-box-shadow: 6px 7px 14px -5px rgba(0,0,0,0.44)
+  box-shadow: 6px 7px 14px -5px rgba(0,0,0,0.44)
+  -webkit-transition: all 0.5s ease
+  -moz-transition: all 0.5s ease
+  -o-transition: all 0.5s ease
+  transition: all 0.5s ease
 
-@media screen and (max-width: 950px)
+
+@media screen and (max-width: 1050px)
   #projects
     .outer-container
       width: 50%
@@ -220,6 +294,23 @@ nav
       width: 100%
 
 @media screen and (max-width: 800px)
+  #about
+    padding: 0px
+    width: 100%
+    min-height: 0
+    background: none
+    
+    .blurb
+      opacity: 1
+      float: none
+      margin: auto
+      padding: 20px
+  #projects
+    .overlay-padding
+      h2, h3 
+        font-size: 90%
+      p, li
+        font-size: 80%
   #skills
     .container
       width: 50%
@@ -229,12 +320,13 @@ nav
       float: left
   
 @media screen and (max-width: 650px)
-  #about
-    .blurb
-      width: 100%
+
   .project-heading
     @extend .project-description
     border-top: 2px solid white
+    cursor: pointer
+    color: white
+    background: #2C3E50
   #projects 
     .outer-container
       width: 100%
@@ -242,9 +334,9 @@ nav
       .img-container
         margin: 0
         padding: 0
-        a
-          img
-            display: none
+        
+        img
+          display: none
   #contact
     h2
       font-size: 150%
