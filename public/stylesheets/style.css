@@ -62,7 +62,8 @@ button:focus {
   margin: auto;
   opacity: 0;
   transition: 0.5s ease-in-out;
-  background-color: #c8d1d0;
+  background-color: #000;
+  color: #fff;
 }
 .overlay .overlay-padding {
   padding: 0px 20px;
@@ -112,11 +113,14 @@ nav ul {
 nav ul li {
   margin-bottom: 20px;
 }
-nav ul li a {
+nav ul li .tooltip a {
   text-decoration: none;
   color: #fff;
 }
-nav ul li a:hover {
+nav ul li .tooltip a i {
+  font-size: 24px;
+}
+nav ul li .tooltip a:hover {
   color: #4db6ac;
 }
 .tooltip {
@@ -162,7 +166,7 @@ nav ul li a:hover {
   margin-bottom: 50px;
   padding: 20px;
   background: url("../images/Death_to_Stock_Equinox_9.jpg") top right no-repeat;
-  background-size: 1500px;
+  background-size: 1300px;
 }
 #about .blurb {
   opacity: 0.8;
@@ -186,7 +190,7 @@ nav ul li a:hover {
 #skills .card {
   margin: auto;
   padding: 0;
-  width: 250px;
+  width: 100%;
   min-height: 100px;
 }
 #skills table {
@@ -219,7 +223,7 @@ nav ul li a:hover {
 }
 #projects .outer-container {
   text-align: center;
-  width: 33%;
+  width: 33.3%;
   float: left;
 }
 #projects .img-container {
@@ -227,10 +231,6 @@ nav ul li a:hover {
 }
 #projects .img-container:hover .overlay {
   opacity: 0.8;
-  background: #fff;
-}
-#projects .img-container:hover img {
-  transition: 0.5s ease-in-out;
 }
 #projects .outer-container:last-child {
   margin-bottom: 50px;
@@ -240,7 +240,7 @@ nav ul li a:hover {
 }
 #projects a {
   text-decoration: underline;
-  color: #000;
+  color: #fff;
 }
 #projects img {
   transition: 0.5s ease;
@@ -285,13 +285,6 @@ nav ul li a:hover {
 @media screen and (max-width: 1050px) {
   #projects .outer-container {
     width: 50%;
-  }
-  #skills .container {
-    float: left;
-  }
-  #skills .card {
-    width: 150px;
-    float: left;
   }
   #contact #contact-container {
     width: 100%;
