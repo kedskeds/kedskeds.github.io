@@ -67,7 +67,8 @@ button:focus
   margin: auto
   opacity: 0
   transition: .5s ease-in-out
-  background-color: cl-medium-gray
+  background-color: black
+  color: white
   
   .overlay-padding
     padding: 0px 20px
@@ -112,13 +113,16 @@ nav
 
     li
       margin-bottom: 20px
-      
-      a
-        text-decoration: none
-        color: white
-      
-      a:hover
-        color: #4DB6AC
+      .tooltip
+        a
+          text-decoration: none
+          color: white
+          i
+            font-size: 24px
+
+        a:hover
+          color: #4DB6AC
+        
 
 .tooltip 
   position: relative
@@ -163,7 +167,7 @@ nav
   margin-bottom: 50px
   padding: 20px
   background: url("../images/Death_to_Stock_Equinox_9.jpg") top right no-repeat
-  background-size: 1500px
+  background-size: 1300px
   // background-size:cover
   // background-attachment: fixed
 
@@ -187,7 +191,8 @@ nav
   .card
     margin: auto
     padding: 0
-    width: 250px
+    // width: 250px
+    width: 100%
     min-height: 100px
 
   table
@@ -215,16 +220,16 @@ nav
   
   .outer-container
     text-align: center
-    width: 33%
+    width: 33.3%
     float: left
   .img-container
     position: relative
   .img-container:hover 
     .overlay 
       opacity: .8
-      background: white
-    img 
-      transition: .5s ease-in-out
+
+    // img 
+    //   transition: .5s ease-in-out
     
   .outer-container:last-child
     margin-bottom: 50px
@@ -234,7 +239,7 @@ nav
   
   a
     text-decoration: underline
-    color: black
+    color: white
 
   img
     transition: .5s ease
@@ -285,10 +290,10 @@ nav
       width: 50%
   #skills
     .container
-      float: left
+      // float: left
     .card
-      width: 150px
-      float: left
+      // width: 150px
+      // float: left
   #contact
     #contact-container
       width: 100%
