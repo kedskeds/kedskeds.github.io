@@ -92,7 +92,7 @@ button:focus
     text-align: center
     font-size: 300%
     border: 5px solid white
-    margin-bottom: 5px
+    margin-bottom: 20px
 
 nav
   z-index: 999
@@ -166,8 +166,9 @@ nav
   min-height: 400px
   margin-bottom: 50px
   padding: 20px
-  background: url("../images/Death_to_Stock_Equinox_9.jpg") top right no-repeat
+  background: url("../images/Untitled-2.png") bottom left no-repeat
   background-size: 1300px
+  background-color: #aad4d8
   // background-size:cover
   // background-attachment: fixed
 
@@ -180,6 +181,9 @@ nav
 
     p, ul
       font-size: 120%
+    
+    a 
+      transition: .2s ease-in-out
 
 #skills
   clear: both
@@ -197,12 +201,15 @@ nav
 
   table
     width: 100%
-    border-collapse: collapse
+    // border-collapse: collapse
+    tr 
+      transition: .2s ease-in-out
+      background: cl-lightgray
     tr:first-child
       text-align: center
       font-size: 130%
-      background: cl-medium-gray
-      color: black
+      background: #607d8b
+      color: white
       border-bottom: 2px solid black
       td:first-child
         height: 50px
@@ -270,6 +277,7 @@ nav
     padding: 0px 20px
     font-size: 300%
     color: white
+    transition: .2s ease-in-out
     
   i:hover 
     color: black
@@ -353,3 +361,13 @@ nav
     display: none
   body
     padding: 10px
+
+@media screen and (max-width: 400px)
+  #skills
+    table
+      tr:first-child
+        font-size: 100%
+        padding: 5px 10px
+  #contact 
+    i 
+      padding: 0px 5px

@@ -91,7 +91,7 @@ button:focus {
   text-align: center;
   font-size: 300%;
   border: 5px solid #fff;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 nav {
   z-index: 999;
@@ -165,8 +165,9 @@ nav ul li .tooltip a:hover {
   min-height: 400px;
   margin-bottom: 50px;
   padding: 20px;
-  background: url("../images/Death_to_Stock_Equinox_9.jpg") top right no-repeat;
+  background: url("../images/Untitled-2.png") bottom left no-repeat;
   background-size: 1300px;
+  background-color: #aad4d8;
 }
 #about .blurb {
   opacity: 0.8;
@@ -178,6 +179,9 @@ nav ul li .tooltip a:hover {
 #about .blurb p,
 #about .blurb ul {
   font-size: 120%;
+}
+#about .blurb a {
+  transition: 0.2s ease-in-out;
 }
 #skills {
   clear: both;
@@ -195,13 +199,16 @@ nav ul li .tooltip a:hover {
 }
 #skills table {
   width: 100%;
-  border-collapse: collapse;
+}
+#skills table tr {
+  transition: 0.2s ease-in-out;
+  background: #cfd8dc;
 }
 #skills table tr:first-child {
   text-align: center;
   font-size: 130%;
-  background: #c8d1d0;
-  color: #000;
+  background: #607d8b;
+  color: #fff;
   border-bottom: 2px solid #000;
 }
 #skills table tr:first-child td:first-child {
@@ -214,6 +221,9 @@ nav ul li .tooltip a:hover {
 #skills table td {
   font-weight: bold;
   padding: 5px 20px;
+}
+#skills table tr:last-child {
+  border-bottom: 10px solid #000;
 }
 #skills .container:last-child {
   margin-bottom: 50px;
@@ -269,6 +279,7 @@ nav ul li .tooltip a:hover {
   padding: 0px 20px;
   font-size: 300%;
   color: #fff;
+  transition: 0.2s ease-in-out;
 }
 #contact i:hover {
   color: #000;
@@ -352,5 +363,14 @@ nav ul li .tooltip a:hover {
   }
   body {
     padding: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #skills table tr:first-child {
+    font-size: 100%;
+    padding: 5px 10px;
+  }
+  #contact i {
+    padding: 0px 5px;
   }
 }
