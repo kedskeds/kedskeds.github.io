@@ -3,211 +3,56 @@ extends layout
 block content
   nav
     ul
-      li 
-        .tooltip
-          a(href='#about') 
-            i(class="material-icons") home
-          .tooltiptext Home
-      li 
-        .tooltip
-          a(href='#skills')
-            i(class='fa fa-code' aria-hidden='true') 
-          .tooltiptext Skills
-      li 
-        .tooltip
-          a(href='#projects') 
-            i(class="material-icons") computer
-          .tooltiptext Projects
-      li 
-        .tooltip
-          a(href='#contact') 
-            i(class="material-icons") email
-          .tooltiptext Contact
-  
-  .page-container
+      li
+        a(href='#work') Work
+      li
+        a(href='#skills') Skills
+      li
+        a(href='#contact') Contact
 
-    #about
+  .wrapper
 
-      .blurb.shadow
-        h1 Hi! I'm Kelsey. I'm a web developer.
-        h2 Building useful, accessible, and well-thought-out applications is my passion.
-        button.mobile.expand Tell Me More
-        .desktop.hidden
-          p My philosophy is simple. I believe that the tech community should be open and inclusive, and I'm eager to contribute to projects big or small with folks who feel the same way. If that sounds good to you, <a href='#contact'>let's build something awesome together.</a>
+    #about.bg-primary
+      .content
+        .max-width
+          h2.text-center Headline
+          h1.space-around Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis pulvinar ipsum, quis euismod leo pellentesque ac. Integer at ante quis tortor ultrices lobortis.
+          .text-center
+            a.btn(href='#work') Explore
 
-    .mobile.divider 
-      i(class='fa fa-code' aria-hidden='true') 
-    #skills
+    #work
       .row
-        .container
-          .card
-            table
-              tr
-                td Programming Languages
-              tr
-                td JavaScript
-              tr
-                td Ruby
-              tr
-                td SQL
-        .container
-          .card
-            table
-              tr
-                td Web Development
-              tr
-                td HTML5
-              tr
-                td CSS3
-              tr
-                td Sass/Stylus
-              tr
-                td Slim/Pug
-              tr
-                td JQuery
-              tr
-                td Bootstrap 
-        .container
-          .card
-            table
-              tr
-                td Technologies & Frameworks
-              tr
-                td Ruby on Rails
-              tr
-                td Sinatra
-              tr
-                td AJAX
-              tr
-                td JSON
-        .container
-          .card
-            table
-              tr
-                td Databases & Tools
-              tr
-                td Git/GitHub
-              tr
-                td PostgreSQL
-              tr
-                td ActiveRecord
-              tr
-                td RSpec
-              tr
-                td Jasmine
-              tr
-                td Heroku
-              tr
-                td Travis CI
+        .col.bg-img
+        .col.bg-img
+        .col.bg-img
+        .col.bg-img
+        .col.bg-img
+        .col.bg-img
 
-    .mobile.divider 
-      i(class="material-icons") computer
-    #projects
-      .outer-container
-        .img-container
-          .mobile.project-heading
-            |SeeSpotGo
-          img(src='../images/seespotgo.png')
-          .overlay.desktop.hidden
-            .overlay-padding
-              a(href='https://github.com/kedskeds/SeeSpotGo')
-                h2 SeeSpotGo
-              h3 View parking spaces in your area, updated in real time. 
-              ul
-                li Testing: RSpec, Travis CI
-                li Front-End tools: HTML, CSS, JQuery
-                li Back-End: Rails, JSON, AJAX, PostgreSQL, Google Maps API, Devise, Action Cable
-        .desc.hidden
-          //- |SeeSpotGo
-      .outer-container
-        .img-container
-          .mobile.project-heading
-            |BoardDom
-          img(src='../images/boarddom.png')
-          .overlay.desktop.hidden
-            .overlay-padding
-              a(href='https://github.com/kedskeds/boarddom')
-                h2 BoardDom
-              h3 A social networking site for board gamers.
-              ul
-                li Testing: RSpec
-                li Front-End tools: HTML, CSS, JQuery
-                li Back-End: Rails, Devise, PostgreSQL
-        .desc.hidden
-          //- |BoardDom
-      .outer-container
-        .img-container
-          .mobile.project-heading
-            |Pomodoro Clock
-          img(src='../images/pomodoro.png')
-          .overlay.desktop.hidden
-            .overlay-padding
-              a(href='http://codepen.io/kedskeds/pen/xEmJPQ')
-                h2 Pomodoro Clock
-              h3 A simple productivity timer.
-              ul
-                li HTML, CSS, JQuery
-                li JavaScript two-way binding
-                li Animated progress bar
-                li Subtle audio effects
-        .desc.hidden
-          //- |Pomodoro Clock
-      .outer-container
-        .img-container
-          .mobile.project-heading
-            |Calculator
-          img(src='../images/calculator.png')
-          .overlay.desktop.hidden
-            .overlay-padding
-              a(href='http://codepen.io/kedskeds/pen/qaQVJB')
-                h2 Calculator
-              h3 Add some stuff, divide some stuff. Go crazy.
-              ul
-                li HTML, CSS, JQuery
-                li JavaScript two-way binding
-        .desc.hidden
-          //- |Calculator
-      .outer-container
-        .img-container
-          .mobile.project-heading
-            |Wikipedia Search
-          img(src='../images/wiki.png')
-          .overlay.desktop.hidden
-            .overlay-padding
-              a(href='http://codepen.io/kedskeds/pen/EyoYWY')
-                h2 Wikipedia Search
-              h3 Search for an article, or view a random one.
-              ul
-                li HTML, CSS, JQuery
-                li Wikipedia API, JSON
-        .desc.hidden
-          //- |Wikipedia Search
-      .outer-container
-        .img-container
-          .mobile.project-heading
-            |Quote Generator
-          img(src='../images/quote.png')
-          .overlay.desktop.hidden
-            .overlay-padding
-              a(href='http://codepen.io/kedskeds/pen/rLjdZa')
-                h2 Quote Generator
-              h3 View & tweet random quotes.
-              ul
-                li HTML, CSS, JQuery
-                li Mashape Quote API, JSON
-        .desc.hidden
-          //- |Quote Generator
+    #skills.bg-secondary
+      h2.text-center Skills
+      .row.max-width
+        .col
+          h2 heading
+          ul
+            li item 1
+            li item 2
+            li item 3
+        .col
+          h2 heading
+          ul
+            li item 1
+            li item 2
+            li item 3
+        .col
+          h2 heading
+          ul
+            li item 1
+            li item 2
+            li item 3
 
-    .mobile.divider 
-      i(class="material-icons") email
     #contact
-      #contact-container.shadow
-        h2 kelseyedelstein@gmail.com
-        a(href='https://www.linkedin.com/in/kedels')
-          i.fa.fa-linkedin-square(aria-hidden='true')
-        a(href='https://www.github.com/kedskeds')
-          i.fa.fa-github(aria-hidden='true')
-        a(href='https://www.codepen.io/kedskeds')
-          i.fa.fa-codepen(aria-hidden='true')
-        a(href='https://www.instagram.com/kedskeds/')
-          i.fa.fa-instagram(aria-hidden='true')
+      .text-center
+        h2 Get in touch
+        h3 Lorem ipsum
+

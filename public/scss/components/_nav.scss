@@ -1,0 +1,66 @@
+nav {
+  ul {
+    li {
+      list-style-type: none;
+      > a {
+        text-decoration: none;
+        position: relative;
+        &:after {
+          @include pseudo;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0%;
+          background-color: white;
+          height: .1rem;
+          transition: all .3s ease;
+        }
+        &:hover {
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 64em) {
+  nav {
+    position: fixed;
+    top:0;
+    right:0;
+    width: 100%;
+    text-align: right;
+    background-color: transparent;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 4.5rem;
+      li {
+        display: inline-block;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        >a {
+          line-height: 1;
+          padding: 1rem;
+          color: white;
+          &:hover {
+            &:after {
+              width: calc(100% - 2rem);
+            }
+          }
+        }
+      }
+    }
+    margin-top: 2rem;
+    opacity: 0;
+    transition: all 1s ease;
+    &.loaded {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+}
