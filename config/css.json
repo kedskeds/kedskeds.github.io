@@ -1,6 +1,0 @@
-{
-  "sassFilesToCompile": [
-    "libs.scss",
-    "main.scss"
-  ]
-}
