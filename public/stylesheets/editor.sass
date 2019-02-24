@@ -1,0 +1,101 @@
+.editor
+  z-index: 3
+  width: 80%
+  max-width: 500px
+  height: 50vh
+  max-height: 320px
+
+  transform: translateZ(0) scale(.6)
+  opacity: 0
+  transition-property: opacity,transform
+  transition-duration: 1s
+  // transition-timing-function: cubic-bezier(.175,.885,.32,1.275)
+  transition-timing-function: ease
+  transition-delay: 1s
+  &.zoom-in
+    opacity: 1
+    transform: translateZ(0) scale(1)
+
+.top-bar
+  position: absolute
+  top: -5px
+  left: 0
+  width: 100%
+  background: #ececec
+  height: 30px
+  padding: 0 8px
+  border-radius: 5px 5px 0 0
+  color: $c-black
+  z-index: 1
+  .dot
+    width: 12px
+    height: 12px
+    background: red
+    display: inline-block
+    border-radius: 50%
+    margin: 10px 3px
+    &:nth-child(1)
+      background: #fb647d
+    &:nth-child(2)
+      background: #f3d246
+    &:nth-child(3)
+      background: #5ccc3b
+  .name
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    font-family: Lucida Grande, Arial, Helvetica
+    font-size: 12px
+
+.screen
+  background: $screen-color
+  height: 100%
+  width: 100%
+  padding: 10px 10% 10px 10px
+  position: relative
+  overflow: hidden
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(transparent, $screen-color)
+
+.line
+  position: absolute
+  top: 7px
+  right: 0
+  background: $screen-color
+  opacity: 1
+  width: 100%
+  height: #{$line-height}px
+  transition: width .4s linear
+  @for $i from 1 through 25
+    &:nth-child(#{$i})
+      transition-delay: #{0 + ($i * .4)}s
+      top: #{7 + (($i - 1) * $line-height)}px
+
+.line-reveal
+  width: 0
+
+.code
+  height: #{$code-height}px
+  border-radius: 4px
+  display: inline-block
+  margin: #{$code-margin}px
+  &.c-b
+    background: $c-blue
+  &.c-g
+    background: $c-green
+  &.c-o
+    background: $c-orange
+  &.c-y
+    background: $c-yellow
+  &.c-p
+    background: $c-purple
+
+.spacer
+  width: 20px !important

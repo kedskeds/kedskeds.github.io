@@ -2,43 +2,79 @@ extends layout
 
 block content
 
-  .content-wrap
+  .main-content
 
-    section.section-container#home
+    section#home.home--container
+      .home--background
+
+      .home--content.rellax.show-for-large
+        .intro--text
+          h1 Hi! I'm Kelsey.
+          h1 I'm a developer based in Los Angeles, CA.
+
+        include includes/editor.pug
+
+        //- .scroll-btn-container
+        //-   a.scroll-btn(href= "#about")
+        //-     span Scroll
+        //-     .arrow V
+
+      .home--content.hide-for-large
+        .intro--text
+          h1 Hi! I'm Kelsey.
+          h1 I'm a developer based in Los Angeles, CA.
+
+        include includes/editor.pug
+
+    section#about.about--container
       .content
-        h1 Kelsey Edelstein
-        h2 Front End Web Developer
+        h2 You could say I'm *obsessed* with web development.
 
-    section.section-container#about
-      h1 About
-      p I'm a web developer based in Los Angeles, CA.
+        .paragraphs
+          p I'm excited by great CSS animations, newfangled JavaScript libraries, and tools that make me a better and more efficient developer. I like solving little puzzles, and I get so much satisfaction out of finding elegant solutions. I'm always trying to test the limits of what the web can do.
+          p When I'm not pushing pixels around a screen, I enjoy hiking, biking, tending to my plants, and playing with French Bulldogs, among other things.
 
-    section.section-container#skills
-      h1 Skills
-      ul
-        li JavaScript
-        li HTML/CSS
-        li Rails
-        li Ruby
+    section#skills.skills--container
+      .content
+        h2 Things I know
+        ul
+          li HTML/HAML/Pug
+          li CSS/SCSS/Sass
+          li JavaScript/JQuery
+          li Ruby
+          li SQL
 
-    section.section-container#portfolio
-      h1 Portfolio
-      .gallery-img-container
-        .gallery-img.bg-img
-        .gallery-img.bg-img
-        .gallery-img.bg-img
-        .gallery-img.bg-img
-        .gallery-img.bg-img
-        .gallery-img.bg-img
+          li Vue.JS
+          li Handlebars
+          li Scrollmagic
 
-    section.section-container#contact
-      h1 Contact
-      h2 kelseyedelstein@gmail.com
-      a(href='https://www.linkedin.com/in/kedels')
-        i.fab.fa-linkedin-square(aria-hidden='true')
-      a(href='https://www.github.com/kedskeds')
-        i.fab.fa-github(aria-hidden='true')
-      a(href='https://www.codepen.io/kedskeds')
-        i.fab.fa-codepen(aria-hidden='true')
-      a(href='https://www.instagram.com/kedskeds/')
-        i.fab.fa-instagram(aria-hidden='true')
+          li Ruby on Rails
+          li Bootstrap/Foundation
+          li Gulp
+          li Express
+          li Craft CMS
+          li Git
+
+    section#work.work--container
+
+      .content
+        h2 Stuff I've worked on
+
+      include includes/projects-grid.pug
+
+
+  section#contact.contact--container
+    .contact--background
+
+      .content
+        h2 kelseyedelstein@gmail.com
+
+        .icons
+          a(href='https://www.linkedin.com/in/kedels')
+            i.fab.fa-linkedin
+          a(href='https://www.github.com/kedskeds')
+            i.fab.fa-github
+          a(href='https://www.codepen.io/kedskeds')
+            i.fab.fa-codepen
+          a(href='https://www.instagram.com/kedskeds/')
+            i.fab.fa-instagram

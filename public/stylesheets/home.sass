@@ -1,0 +1,77 @@
+@import editor.sass
+
+.home--container
+  height: 100vh
+
+  .home--background
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: $c-mint-green
+    z-index: 0
+    transform: skewY(-7deg)
+    transform-origin: top left
+
+  .home--content
+    height: 100%
+    width: 100%
+    max-width: 1000px
+    margin: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+  .intro--text
+    color: $c-white
+    z-index: 3
+    text-transform: lowercase
+    max-width: 400px
+    padding: 10px
+
+    opacity: 0
+    transform: translate3d(-100px,0,0)
+    transition-property: opacity,transform
+    transition-duration: 1s
+    transition-timing-function: cubic-bezier(.175,.885,.32,1.275)
+    &.fade-right
+      opacity: 1
+      transform: translateZ(0)
+
+  .scroll-btn-container
+    .scroll-btn
+      font-size: 16px
+      font-family: $f-secondary
+      text-transform: lowercase
+      text-align: center
+      transition: all .1s ease
+      text-decoration: none
+      animation: glow 1s ease-in-out infinite alternate
+      &:hover
+        text-shadow: 0px 0px 20px $c-white
+        cursor: pointer
+
+    .arrow
+      text-transform: uppercase
+      animation: bounce 1s ease-in-out infinite alternate
+
+@keyframes bounce
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(10px)
+
+@keyframes glow
+  from
+    text-shadow: none
+  to
+    text-shadow: 0px 0px 20px $c-white
+
+
+@media screen and (min-width: 1024px)
+  .home--container
+    .home--content
+      flex-direction: row
+      justify-content: space-evenly
