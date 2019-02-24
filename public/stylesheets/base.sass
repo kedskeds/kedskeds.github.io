@@ -1,0 +1,31 @@
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+
+section
+  width: 100%
+
+.content
+  max-width: 700px
+  margin: auto
+  padding: 30px
+  .paragraphs
+    max-width: 500px
+    margin: auto
+    text-align: left
+
+.main-content
+  z-index: 1
+  margin-bottom: $footer-height
+  background: #f7f7f7
+  
+
+@media screen and (max-width: 1023px)
+  .show-for-large
+    display: none !important
+
+@media screen and (min-width: 1024px)
+  .hide-for-large
+    display: none !important

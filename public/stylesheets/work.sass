@@ -1,0 +1,49 @@
+.work--container
+  padding-bottom: 100px
+  .bg-img
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+
+  .projects--grid
+    padding: 0 15px
+    max-width: 1000px
+    margin: auto
+
+    .bg-img
+      padding-bottom: 55%
+      width: 100%
+
+    .description
+      line-height: 25px
+      padding: 23px
+      font-family: $f-primary
+      text-align: left
+      .project--name
+        font-size: 19px
+        line-height: 30px
+        font-weight: 600
+        font-family: $f-secondary
+        text-transform: lowercase
+
+  .project
+    margin-bottom: 50px
+
+
+@media screen and (min-width: 640px)
+  .work--container
+    .projects--grid
+      .description
+        width: 45%
+      .project
+        display: flex
+        .project--img
+          flex: 1
+        &:nth-of-type(odd)
+          .description
+            text-align: right
+        &:nth-of-type(even)
+          .description
+            order: 2
+          .project--img
+            order: 1
