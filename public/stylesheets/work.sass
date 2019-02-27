@@ -19,12 +19,25 @@
       padding: 23px
       font-family: $f-primary
       text-align: left
-      .project--name
+      .project--name a
         font-size: 19px
         line-height: 30px
         font-weight: 600
         font-family: $f-secondary
-        text-transform: lowercase
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          left: 0
+          bottom: 0
+          width: 0
+          height: 2px
+          background: transparent
+          transition: all .2s ease
+        &:hover
+          &:before
+           width: 100%
+           background: $c-black
 
   .project
     margin-bottom: 50px
@@ -33,6 +46,19 @@
 @media screen and (min-width: 640px)
   .work--container
     .projects--grid
+      .project--img
+        position: relative
+        .overlay
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 100%
+          background: transparent
+          transition: all .2s ease
+        &:hover
+          .overlay
+            background: rgba($c-white, .3)
       .description
         width: 45%
       .project

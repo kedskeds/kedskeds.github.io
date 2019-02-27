@@ -30,8 +30,7 @@ section {
     display: none !important; } }
 
 h1, h2 {
-  font-family: "Major Mono Display";
-  text-transform: lowercase; }
+  font-family: "ibm plex mono"; }
 
 h1 {
   font-size: 30px;
@@ -251,7 +250,6 @@ a {
   .home--container .intro--text {
     color: #ffffff;
     z-index: 3;
-    text-transform: lowercase;
     max-width: 400px;
     padding: 10px;
     opacity: 0;
@@ -264,7 +262,7 @@ a {
       transform: translateZ(0); }
   .home--container .scroll-btn-container .scroll-btn {
     font-size: 16px;
-    font-family: "Major Mono Display";
+    font-family: "ibm plex mono";
     text-transform: lowercase;
     text-align: center;
     transition: all .1s ease;
@@ -330,16 +328,40 @@ a {
       padding: 23px;
       font-family: "Open Sans";
       text-align: left; }
-      .work--container .projects--grid .description .project--name {
+      .work--container .projects--grid .description .project--name a {
         font-size: 19px;
         line-height: 30px;
         font-weight: 600;
-        font-family: "Major Mono Display";
-        text-transform: lowercase; }
+        font-family: "ibm plex mono";
+        position: relative; }
+        .work--container .projects--grid .description .project--name a:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background: transparent;
+          transition: all .2s ease; }
+        .work--container .projects--grid .description .project--name a:hover:before {
+          width: 100%;
+          background: #161616; }
   .work--container .project {
     margin-bottom: 50px; }
 
 @media screen and (min-width: 640px) {
+  .work--container .projects--grid .project--img {
+    position: relative; }
+    .work--container .projects--grid .project--img .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      transition: all .2s ease; }
+    .work--container .projects--grid .project--img:hover .overlay {
+      background: rgba(255, 255, 255, 0.3); }
   .work--container .projects--grid .description {
     width: 45%; }
   .work--container .projects--grid .project {
