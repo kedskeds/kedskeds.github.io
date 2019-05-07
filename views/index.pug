@@ -30,30 +30,37 @@ block content
       .content
         h2 You could say I'm obsessed with web development.
 
-        .paragraphs
-          p I'm excited by great CSS animations, newfangled JavaScript libraries, and tools that make me a better and more efficient developer. I like solving little puzzles, and I get so much satisfaction out of finding elegant solutions. I'm always trying to test the limits of what the web can do.
-          p When I'm not pushing pixels around a screen, I enjoy hiking, biking, tending to my plants, and playing with French Bulldogs, among other things.
+        .intro
+
+          .paragraphs
+            p I'm excited by great CSS animations, experimental web technologies, and tools that make me a better and more efficient developer. I like solving puzzles, and I get so much satisfaction out of finding elegant solutions. I'm always trying to test the limits of what the web can do.
+            p When I'm not pushing pixels around a screen, I enjoy hiking, biking, photography, and travel, among other things.
+
+          .me
+            .bg-img(style='background-image:url(../images/me.png)')
 
     section#skills.skills--container
       .content
         h2 Skills
         ul
-          li HTML/HAML/Pug
-          li CSS/SCSS/Sass
-          li JavaScript/JQuery
+          p Languages
+          li HTML
+          li CSS
+          li JavaScript
           li Ruby
           li SQL
-
-          li Vue.JS
-          li Handlebars
-          li Scrollmagic
-
-          li Ruby on Rails
-          li Bootstrap/Foundation
-          li Gulp
+        ul
+          p Web Frameworks
+          li React.js
           li Express
+          li Vue.js
+          li Ruby on Rails
+        ul
+          p Tools
+          li Gulp
           li Craft CMS
-          li Git
+          li Bootstrap/Foundation
+
 
     section#work.work--container
 

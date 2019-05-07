@@ -292,12 +292,60 @@ a {
     flex-direction: row;
     justify-content: space-evenly; } }
 
+.about--container .me {
+  width: 200px;
+  margin: auto;
+  position: relative; }
+  .about--container .me:after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 30px;
+    font-family: "ibm plex mono";
+    font-size: 10px; }
+  .about--container .me .bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100%;
+    width: 100%;
+    border: 10px solid white;
+    border-bottom: 46px solid white;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(236, 236, 236, 0.75);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(236, 236, 236, 0.75);
+    box-shadow: 0px 0px 4px 1px rgba(236, 236, 236, 0.75); }
+
+@media screen and (min-width: 640px) {
+  .about--container .intro {
+    display: flex; }
+    .about--container .intro .paragraphs {
+      padding: 0 20px; } }
+
+.skills--container h2 {
+  margin-bottom: 10px; }
+
 .skills--container ul {
   padding: 0;
   max-width: 154px;
   text-align: left;
   margin: auto;
   list-style: none; }
+  .skills--container ul p {
+    font-family: "ibm plex mono";
+    font-size: 17px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 600;
+    text-align: center; }
+    .skills--container ul p:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #161616; }
   .skills--container ul li {
     position: relative;
     padding-left: 20px; }
@@ -308,7 +356,15 @@ a {
       top: 8px;
       height: 5px;
       width: 5px;
-      background: #e6e6e6; }
+      background: #54bb95; }
+
+@media screen and (min-width: 640px) {
+  .skills--container ul {
+    max-width: 33%;
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px; } }
 
 .work--container {
   padding-bottom: 100px; }
@@ -346,6 +402,10 @@ a {
         .work--container .projects--grid .description .project--name a:hover:before {
           width: 100%;
           background: #161616; }
+      .work--container .projects--grid .description .project--lang {
+        font-weight: 600; }
+      .work--container .projects--grid .description .project--lang, .work--container .projects--grid .description .project--features {
+        font-size: 14px; }
   .work--container .project {
     margin-bottom: 50px; }
 

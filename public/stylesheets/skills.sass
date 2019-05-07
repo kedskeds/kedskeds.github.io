@@ -1,10 +1,27 @@
 .skills--container
+  h2
+    margin-bottom: 10px
   ul
     padding: 0
     max-width: 154px
     text-align: left
     margin: auto
     list-style: none
+    p
+      font-family: $f-secondary
+      font-size: 17px
+      text-transform: uppercase
+      position: relative
+      font-weight: 600
+      text-align: center
+      &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 2px
+        background: $c-black
     li
       position: relative
       padding-left: 20px
@@ -15,4 +32,14 @@
         top: 8px
         height: 5px
         width: 5px
-        background: #e6e6e6
+        background: $c-mint-green
+
+
+@media screen and (min-width: 640px)
+  .skills--container
+    ul
+      max-width: 33%
+      width: 33%
+      display: inline-block
+      vertical-align: top
+      padding: 10px
