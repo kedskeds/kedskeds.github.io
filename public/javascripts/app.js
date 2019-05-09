@@ -43,9 +43,9 @@ $(document).ready(function() {
   var rellax = new Rellax('.rellax');
 })
 
- $(function() {
-  $('.scroll-btn').click (function() {
-    $('html, body').animate({scrollTop: $('section#about').offset().top }, 'slow');
-    return false;
-  });
-});
+// $(function() {
+//   $('.scroll-btn').click (function() {
+//     $('html, body').animate({scrollTop: $('section#about').offset().top }, 'slow');
+//     return false;
+//   });
+// });
