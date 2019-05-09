@@ -27,9 +27,9 @@
   .intro--text
     color: $c-white
     z-index: 3
-    // text-transform: lowercase
+    text-align: center
     max-width: 400px
-    padding: 10px
+    padding: 10px 20px
 
     opacity: 0
     transform: translate3d(-100px,0,0)
@@ -69,9 +69,15 @@
   to
     text-shadow: 0px 0px 20px $c-white
 
+@media screen and (min-width: 640px)
+  .home--container
+    .intro--text
+      padding: 10px
 
 @media screen and (min-width: 1024px)
   .home--container
     .home--content
       flex-direction: row
       justify-content: space-evenly
+    .intro--text
+      text-align: left

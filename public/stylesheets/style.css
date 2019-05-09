@@ -33,12 +33,12 @@ h1, h2 {
   font-family: "ibm plex mono"; }
 
 h1 {
-  font-size: 30px;
-  line-height: 36px; }
+  font-size: 20px;
+  line-height: 26px; }
 
 h2 {
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 26px;
+  line-height: 26px;
   color: #54bb95;
   text-align: center; }
 
@@ -55,6 +55,14 @@ a {
   a:hover {
     color: black; }
 
+@media screen and (min-width: 640px) {
+  h1 {
+    font-size: 30px;
+    line-height: 36px; }
+  h2 {
+    font-size: 30px;
+    line-height: 36px; } }
+
 .editor {
   z-index: 3;
   width: 80%;
@@ -70,6 +78,15 @@ a {
   .editor.zoom-in {
     opacity: 1;
     transform: translateZ(0) scale(1); }
+
+.source {
+  padding-top: 5px; }
+  .source a {
+    font-size: 12px;
+    text-decoration: underline; }
+    .source a:hover {
+      color: #ffffff;
+      cursor: pointer; }
 
 .top-bar {
   position: absolute;
@@ -250,8 +267,9 @@ a {
   .home--container .intro--text {
     color: #ffffff;
     z-index: 3;
+    text-align: center;
     max-width: 400px;
-    padding: 10px;
+    padding: 10px 20px;
     opacity: 0;
     transform: translate3d(-100px, 0, 0);
     transition-property: opacity,transform;
@@ -287,10 +305,16 @@ a {
   to {
     text-shadow: 0px 0px 20px #ffffff; } }
 
+@media screen and (min-width: 640px) {
+  .home--container .intro--text {
+    padding: 10px; } }
+
 @media screen and (min-width: 1024px) {
   .home--container .home--content {
     flex-direction: row;
-    justify-content: space-evenly; } }
+    justify-content: space-evenly; }
+  .home--container .intro--text {
+    text-align: left; } }
 
 .about--container .me {
   width: 200px;
@@ -368,6 +392,8 @@ a {
 
 .work--container {
   padding-bottom: 100px; }
+  .work--container .content {
+    padding-bottom: 0; }
   .work--container .bg-img {
     background-size: cover;
     background-repeat: no-repeat;
