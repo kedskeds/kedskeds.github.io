@@ -1,5 +1,5 @@
 var widths = ['100px', '50px', '80px', '20px', '30px']
-var colorClasses = ['c-b', 'c-g', 'c-o', 'c-y', 'c-p', 'spacer', 'spacer', 'spacer', 'spacer', 'spacer']
+var colorClasses = ['c-b', 'c-g', 'c-o', 'c-y', 'spacer', 'spacer', 'spacer', 'spacer', 'spacer']
 
 function getRand(min, max) {
     return Math.floor(Math.random() * ((max + 1) - min)) + min
