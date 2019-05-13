@@ -63,6 +63,49 @@ a {
     font-size: 30px;
     line-height: 36px; } }
 
+.header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(244, 94, 76, 0.7); }
+  .header nav ul {
+    padding-left: 0;
+    margin: 0; }
+    .header nav ul li {
+      list-style-type: none;
+      display: inline-block; }
+      .header nav ul li a {
+        transition: all .2s ease;
+        padding: 0 10px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 11px; }
+        .header nav ul li a.active {
+          background: #ffffff;
+          color: #F45E4C; }
+
+@media screen and (min-width: 1024px) {
+  .header {
+    display: block;
+    height: 100vh;
+    width: 30px; }
+    .header nav {
+      height: 100%; }
+      .header nav ul {
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 100%; }
+        .header nav ul li {
+          transform: rotate(-90deg);
+          display: block; } }
+
 .editor {
   z-index: 3;
   width: 80%;
@@ -392,50 +435,51 @@ a {
     vertical-align: top;
     padding: 10px; } }
 
-.work--container {
-  padding-bottom: 100px; }
-  .work--container .content {
-    padding-bottom: 15px; }
-  .work--container .bg-img {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; }
-  .work--container .projects--grid {
-    padding: 0 15px;
-    max-width: 1000px;
-    margin: auto; }
-    .work--container .projects--grid .bg-img {
-      padding-bottom: 55%;
-      width: 100%; }
-    .work--container .projects--grid .description {
-      line-height: 25px;
-      padding: 23px;
-      font-family: "Open Sans";
-      text-align: left; }
-      .work--container .projects--grid .description .project--name a {
-        font-size: 19px;
-        line-height: 30px;
-        font-weight: 600;
-        font-family: "ibm plex mono";
-        position: relative; }
-        .work--container .projects--grid .description .project--name a:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 0;
-          height: 2px;
-          background: transparent;
-          transition: all .2s ease; }
-        .work--container .projects--grid .description .project--name a:hover:before {
-          width: 100%;
-          background: #161616; }
-      .work--container .projects--grid .description .project--lang {
-        font-weight: 600; }
-      .work--container .projects--grid .description .project--lang, .work--container .projects--grid .description .project--features {
-        font-size: 14px; }
-  .work--container .project {
-    margin-bottom: 50px; }
+.work--container .content {
+  padding-bottom: 15px; }
+
+.work--container .bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.work--container .projects--grid {
+  padding: 0 15px;
+  max-width: 1000px;
+  margin: auto; }
+  .work--container .projects--grid .bg-img {
+    padding-bottom: 55%;
+    width: 100%; }
+  .work--container .projects--grid .description {
+    line-height: 25px;
+    padding: 23px;
+    font-family: "Open Sans";
+    text-align: left; }
+    .work--container .projects--grid .description .project--name a {
+      font-size: 19px;
+      line-height: 30px;
+      font-weight: 600;
+      font-family: "ibm plex mono";
+      position: relative; }
+      .work--container .projects--grid .description .project--name a:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: transparent;
+        transition: all .2s ease; }
+      .work--container .projects--grid .description .project--name a:hover:before {
+        width: 100%;
+        background: #161616; }
+    .work--container .projects--grid .description .project--lang {
+      font-weight: 600; }
+    .work--container .projects--grid .description .project--lang, .work--container .projects--grid .description .project--features {
+      font-size: 14px; }
+
+.work--container .project:not(:last-child) {
+  margin-bottom: 50px; }
 
 @media screen and (min-width: 640px) {
   .work--container .projects--grid .project--img {
@@ -465,7 +509,7 @@ a {
 
 .contact--container {
   height: 220px;
-  background: #54bb95;
+  background: #6AC6C5;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -485,11 +529,16 @@ a {
       color: #ffffff;
       margin: 10px 11px; }
 
+#contact-anchor {
+  padding-top: 100px; }
+
 @media screen and (min-width: 640px) {
   .contact--container .content h2 {
     font-size: 30px; }
   .contact--container .icons {
     font-size: 50px;
-    margin: 10px 17px; } }
+    margin: 10px 17px; }
+  #contact-anchor {
+    padding-top: 150px; } }
 
 /*# sourceMappingURL=style.css.map */

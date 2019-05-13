@@ -4,6 +4,14 @@ block content
 
   .main-content
 
+    .header
+      nav
+        ul
+          li: a#about-btn(href="#about") about
+          li: a#skills-btn(href="#skills") skills
+          li: a#projects-btn(href="#work") projects
+          li: a#contact-btn(href="#contact-anchor") contact
+
     section#home.home--container
       .home--background
 
@@ -71,6 +79,8 @@ block content
         h2 Projects
 
       include includes/projects-grid.pug
+
+    #contact-anchor
 
 
   section#contact.contact--container

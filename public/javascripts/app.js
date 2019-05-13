@@ -40,7 +40,29 @@ $(document).ready(function() {
   writeCode();
   revealLines();
 
-  var rellax = new Rellax('.rellax');
+  // var rellax = new Rellax('.rellax');
+
+  $('nav a').click(function () {
+    $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top }, 'slow');
+    return false;
+  })
+
+  // ScrollMagic
+
+  var controller = new ScrollMagic.Controller();
+
+  // build scenes
+  var navItems = $('.header nav ul li a')
+  for(var i = 0; i < navItems.length; i++) {
+    var item = navItems[i]
+    var id = '#' + $(item).attr('id')
+    var href = $(item).attr('href')
+
+    new ScrollMagic.Scene({triggerElement: href, triggerHook: 'onLeave', offset: -5, duration: $(href).height() })
+      .setClassToggle(id, "active")
+      // .addIndicators()
+      .addTo(controller);
+  }
 })
 
 // $(function() {
