@@ -29,6 +29,9 @@ section {
   .hide-for-large {
     display: none !important; } }
 
+h1, h2, p, ul, a {
+  font-display: swap; }
+
 h1, h2 {
   font-family: "ibm plex mono"; }
 

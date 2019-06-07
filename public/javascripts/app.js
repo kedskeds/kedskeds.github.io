@@ -40,6 +40,10 @@ $(document).ready(function() {
   writeCode();
   revealLines();
 
+  var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".bg-img"
+  });
+
   // var rellax = new Rellax('.rellax');
 
   $('nav a').click(function () {

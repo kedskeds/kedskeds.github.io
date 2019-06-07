@@ -15,19 +15,7 @@ block content
     section#home.home--container
       .home--background
 
-      .home--content.show-for-large
-        .intro--text.rellax
-          h1 Hi! I'm Kelsey.
-          h1 I'm a developer based in Los Angeles, CA.
-
-        include includes/editor.pug
-
-        //- .scroll-btn-container
-        //-   a.scroll-btn(href= "#about")
-        //-     span Scroll
-        //-     .arrow V
-
-      .home--content.hide-for-large
+      .home--content
         .intro--text
           h1 Hi! I'm Kelsey.
           h1 I'm a developer based in Los Angeles, CA.
@@ -45,7 +33,8 @@ block content
             p When I'm not pushing pixels around a screen, I enjoy hiking, biking, photography, and travel, among other things.
 
           .me
-            .bg-img(style='background-image:url(../images/me.png)')
+            //- .bg-img(style='background-image:url(../images/me.png)')
+            .bg-img(data-bg='url(../images/me.png)')
 
     section#skills.skills--container
       .content
@@ -90,11 +79,11 @@ block content
         h2 kelseyedelstein@gmail.com
 
         .icons
-          a(href='https://www.linkedin.com/in/kedels')
+          a(href='https://www.linkedin.com/in/kedels' title='LinkedIn')
             i.fab.fa-linkedin
-          a(href='https://www.github.com/kedskeds')
+          a(href='https://www.github.com/kedskeds' title='GitHub')
             i.fab.fa-github
-          a(href='https://www.codepen.io/kedskeds')
+          a(href='https://www.codepen.io/kedskeds' title='CodePen')
             i.fab.fa-codepen
-          a(href='https://www.instagram.com/kedskeds/')
+          a(href='https://www.instagram.com/kedskeds/' title='Instagram')
             i.fab.fa-instagram
