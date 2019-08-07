@@ -2,6 +2,8 @@ extends layout
 
 block content
 
+  //- each nav_item in ['about', 'skills', 'work', 'contact']
+  //- li: a(href=`#${nav_item}` id=`${nav_item}-btn`)= nav_item
   .main-content
 
     .header
@@ -11,6 +13,7 @@ block content
           li: a#skills-btn(href="#skills") skills
           li: a#projects-btn(href="#work") projects
           li: a#contact-btn(href="#contact-anchor") contact
+    .header-bg
 
     section#home.home--container
       .home--background
@@ -33,7 +36,6 @@ block content
             p When I'm not pushing pixels around a screen, I enjoy hiking, biking, photography, and travel, among other things.
 
           .me
-            //- .bg-img(style='background-image:url(../images/me.png)')
             .bg-img(data-bg='url(../images/me.png)')
 
     section#skills.skills--container
