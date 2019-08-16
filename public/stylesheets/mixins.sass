@@ -1,0 +1,19 @@
+$gradient-animate-time: 15s
+@mixin gradient-animate
+  // Generated here https://www.gradient-animator.com/
+  background: -moz-linear-gradient(132deg, #50d2d0, #2b96ca, $c-mint-green)
+  background: -webkit-linear-gradient(132deg, #50d2d0, #2b96ca, $c-mint-green)
+  background: -ms-linear-gradient(132deg, #50d2d0, #2b96ca, $c-mint-green)
+  background: linear-gradient(132deg, #50d2d0, #2b96ca, $c-mint-green)
+  background-size: 600% 600%
+  -webkit-animation: GradientAnimate $gradient-animate-time ease infinite
+  -moz-animation: GradientAnimate $gradient-animate-time ease infinite
+  animation: GradientAnimate $gradient-animate-time ease infinite
+
+@keyframes GradientAnimate
+  0%
+    background-position: 0% 0%
+  50%
+    background-position: 100% 100%
+  100%
+    background-position: 0% 0%

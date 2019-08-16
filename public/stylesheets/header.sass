@@ -9,6 +9,7 @@
 .header
   z-index: 100
   nav
+    border-right: 1px solid $c-white
     ul
       padding-left: 0
       margin: 0
@@ -22,6 +23,7 @@
           text-transform: uppercase
           letter-spacing: .1em
           font-size: 11px
+          padding: 8px
           // position: relative
           // &:before
           //   content: ''
@@ -38,8 +40,8 @@
           //     width: 100%
           //     background: $c-white
           &.active
-            background: $c-white
-            color: $c-orange
+            background: #f7f7f7
+            color: $c-black
 
 
 @media screen and (min-width: 1024px)
@@ -48,7 +50,7 @@
     height: 100vh
     width: 30px
     // background: rgba($c-orange, 1)
-    background: #f89e93
+    background: #404040
 
   .header
     display: block

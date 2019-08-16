@@ -2,17 +2,14 @@ extends layout
 
 block content
 
-  //- each nav_item in ['about', 'skills', 'work', 'contact']
-  //- li: a(href=`#${nav_item}` id=`${nav_item}-btn`)= nav_item
   .main-content
 
     .header
       nav
         ul
-          li: a#about-btn(href="#about") about
-          li: a#skills-btn(href="#skills") skills
-          li: a#projects-btn(href="#work") projects
-          li: a#contact-btn(href="#contact-anchor") contact
+          each nav_item in ['about', 'skills', 'work', 'contact']
+            li: a(href=`#${nav_item}` id=`${nav_item}-btn`)= nav_item
+
     .header-bg
 
     section#home.home--container
@@ -27,11 +24,12 @@ block content
 
     section#about.about--container
       .content
-        h2 You could say I'm obsessed with web development.
+        h2 About Me
 
         .intro
 
           .paragraphs
+            p I'm currently working remotely at <strong>LeaseLabs</strong> as a <strong>Front End Developer</strong>. I build websites and themes that are CMS-editable, flexible, and modular.
             p I'm excited by great CSS animations, experimental web technologies, and tools that make me a better and more efficient developer. I like solving puzzles, and I get so much satisfaction out of finding elegant solutions. I'm always trying to test the limits of what the web can do.
             p When I'm not pushing pixels around a screen, I enjoy hiking, biking, photography, and travel, among other things.
 
@@ -67,18 +65,19 @@ block content
     section#work.work--container
 
       .content
-        h2 Projects
+        h2 Recent Work
 
       include includes/projects-grid.pug
-
-    #contact-anchor
 
 
   section#contact.contact--container
     .contact--background
 
+    .contact--content
       .content
-        h2 kelseyedelstein@gmail.com
+        h2 Contact
+
+        p I am available and open to new opportunities. If you have something in mind, please feel free to reach out! I'm particularly interested in projects that make the world a better place.
 
         .icons
           a(href='https://www.linkedin.com/in/kedels' title='LinkedIn')

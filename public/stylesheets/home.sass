@@ -13,6 +13,7 @@
     z-index: 0
     transform: skewY(-7deg)
     transform-origin: top left
+    @include gradient-animate
 
   .home--content
     height: 100%
@@ -36,6 +37,9 @@
     transition-property: opacity,transform
     transition-duration: 1s
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275)
+    h1:first-of-type
+      border-bottom: 1px solid $c-white
+      padding-bottom: 15px
     &.fade-right
       opacity: 1
       transform: translateZ(0)

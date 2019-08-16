@@ -3,6 +3,14 @@ var router = express.Router();
 
 var projects = [
   {
+    name: "Engage / Hack for LA",
+    link: "https://github.com/hackla-engage",
+    title: "Engage",
+    lang: "React, Redux",
+    features: "In 2019 I started attending a weekly Code for America meetup to address LA's biggest civic issues. Engage is an application that makes it easier for citizens to vote on proposals from their local government.",
+    image: "url(../images/engage.png)"
+  },
+  {
     id:0,
     name:"Muse / Custom Theme",
     link:"https://www.itsyourmusebg.com",

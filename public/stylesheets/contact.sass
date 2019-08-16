@@ -1,17 +1,26 @@
 .contact--container
-  height: $footer-height
-  background: $c-mint-green
+  position: relative
 
-  position: fixed
-  bottom: 0
-  left: 0
-  right: 0
-  z-index: -102
+  .contact--background
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: $c-blue
+    z-index: 0
+    @include gradient-animate
+
+  .contact--content
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
 
   .content
-    h2
+    max-width: 300px
+    > *
       color: $c-white
-      font-size: 15px
 
   .icons
     width: 100%
@@ -26,16 +35,9 @@
       margin: 10px 11px
       &:hover
         color: #333333
-#contact-anchor
-  padding-top: 100px
+
 
 @media screen and (min-width: 640px)
   .contact--container
-    .content
-      h2
-        font-size: 30px
     .icons
       font-size: 50px
-      margin: 10px 17px
-  #contact-anchor
-    padding-top: 150px
