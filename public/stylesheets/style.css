@@ -570,10 +570,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center; }
-  .contact--container .content {
-    max-width: 300px; }
-    .contact--container .content > * {
-      color: #ffffff; }
+  .contact--container .content > * {
+    color: #ffffff; }
   .contact--container .icons {
     width: 100%;
     display: flex;
