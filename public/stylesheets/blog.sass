@@ -3,12 +3,28 @@
   margin: auto
   padding: 20px
   .post
+    h2
+      font-size: 20px
+      text-align: left
+      text-transform: none
     .bg-img
       height: 100px
       width: 100px
       background-repeat: no-repeat
       background-size: cover
       background-position: center
+      filter: grayscale(1)
+    .tags
+      font-family: $f-primary
+      font-size: 12px
+      span
+        display: inline-block
+        padding: 2px 10px
+        margin: 2px
+        margin-right: 0
+        text-transform: uppercase
+        background: $c-mint-green
+        color: $c-white
 
 
 @media screen and (min-width: 1024px)
@@ -18,8 +34,20 @@
       flex-wrap: wrap
       justify-content: space-between
       .post
+        position: relative
         flex: 0 1 33%
         padding: 10px
         .bg-img
           height: 200px
           width: 100%
+        .snippet
+          // height: 60px
+          // padding: 10px 0
+          p
+            margin: 0
+        .tags
+          position: absolute
+          bottom: 160px
+          left: 10px
+          // background: rgba(0,0,0,.5)
+          width: calc(100% - 20px)

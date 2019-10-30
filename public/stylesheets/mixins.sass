@@ -17,3 +17,13 @@ $gradient-animate-time: 15s
     background-position: 100% 100%
   100%
     background-position: 0% 0%
+
+@mixin project-color($color)
+  .project--img
+    border: 2px solid $color
+    &:before
+      border-right: 4px solid $color
+      border-bottom: 4px solid $color
+    &:hover
+      &:before
+        border-width: 10px

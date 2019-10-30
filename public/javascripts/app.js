@@ -62,7 +62,7 @@ $(document).ready(function() {
       $(this).text('Show More');
       $(".project.postIndex").addClass("hide");
     }
-    $(this).hide();
+    // $(this).hide();
   })
 
   // ScrollMagic

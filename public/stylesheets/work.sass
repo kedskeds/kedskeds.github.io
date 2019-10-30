@@ -15,6 +15,7 @@
     .bg-img
       padding-bottom: 55%
       width: 100%
+      filter: grayscale(1)
 
     .description
       line-height: 25px
@@ -52,19 +53,46 @@
 @media screen and (min-width: 640px)
   .work--container
     .projects--grid
+      .project:nth-of-type(1)
+        @include project-color($color: $c-yellow)
+      .project:nth-of-type(2)
+        @include project-color($color: $c-blue)
+      .project:nth-of-type(3)
+        @include project-color($color: $c-green)
+      .project:nth-of-type(4)
+        @include project-color($color: $c-orange)
+      .project:nth-of-type(5)
+        @include project-color($color: #f9ab69)
+      .project:nth-of-type(6)
+        @include project-color($color: $c-green)
+      .project:nth-of-type(7)
+        @include project-color($color: $c-blue)
+      .project:nth-of-type(8)
+        @include project-color($color: $c-yellow)
+
       .project--img
         position: relative
-        .overlay
+        // border: 2px solid #efb644
+        .bg-img
+          height: 100%
+          transition: all .2s ease
+        &:before
+          content: ''
           position: absolute
-          top: 0
-          left: 0
+          top: 4px
+          left: 4px
           height: 100%
           width: 100%
-          background: transparent
+          // border-right: 4px solid #efb644
+          // border-bottom: 4px solid #efb644
           transition: all .2s ease
         &:hover
-          .overlay
-            background: rgba($c-white, .3)
+          &:before
+            transform: translate(8px,8px)
+            // border-width: 10px
+          .bg-img
+            filter: none
+
       .description
         width: 45%
       .project
