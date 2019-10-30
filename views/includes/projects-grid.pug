@@ -1,7 +1,7 @@
 .projects--grid
 
-  for project in projects
-    .project
+  for project, index in projects
+    .project(class = index > 3 ? "hide postIndex" : "")
       .description
         .project--name
           a(href=project.link, target='_blank', title=project.title)= project.name
@@ -11,3 +11,7 @@
       a.project--img(href=project.link, target='_blank', title=project.title)
         .bg-img(data-bg=project.image)
           .overlay
+
+  .text-center
+    a.btn.expand.btn-blue(href='#', data-attr='project')
+      span Show More

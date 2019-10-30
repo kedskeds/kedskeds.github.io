@@ -51,6 +51,20 @@ $(document).ready(function() {
     return false;
   })
 
+  $(".expand").on('click', function(e) {
+    e.preventDefault();
+
+    $(this).toggleClass('expanded');
+    if($(this).hasClass('expanded')) {
+      $(this).text('Show Less');
+      $(".project.hide").removeClass("hide");
+    } else {
+      $(this).text('Show More');
+      $(".project.postIndex").addClass("hide");
+    }
+    $(this).hide();
+  })
+
   // ScrollMagic
 
   var controller = new ScrollMagic.Controller();

@@ -68,7 +68,8 @@
       .description
         width: 45%
       .project
-        display: flex
+        &:not(.hide)
+          display: flex
         .project--img
           flex: 1
         &:nth-of-type(odd)
