@@ -9,7 +9,6 @@ function randArrVal(arr) {
   return arr[getRand(0, arr.length - 1)]
 }
 
-
 function writeCode() {
 	var code = $(".screen .code")
 	for(var i = 0; i < code.length; i++) {
@@ -22,9 +21,7 @@ function revealLines() {
 	var lines = $(".line")
 
 	for(var i = 0; i < lines.length; i++) {
-	  // if(i % 5 !== 0) {
-	    $(lines[i]).addClass('line-reveal')
-	  // }
+    $(lines[i]).addClass('line-reveal')
 	}
 }
 
@@ -44,13 +41,6 @@ $(document).ready(function() {
     elements_selector: ".bg-img"
   });
 
-  // var rellax = new Rellax('.rellax');
-
-  $('nav a').click(function () {
-    $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top }, 'slow');
-    return false;
-  })
-
   $(".expand").on('click', function(e) {
     e.preventDefault();
 
@@ -64,28 +54,4 @@ $(document).ready(function() {
     }
     // $(this).hide();
   })
-
-  // ScrollMagic
-
-  var controller = new ScrollMagic.Controller();
-
-  // build scenes
-  var navItems = $('.header nav ul li a')
-  for(var i = 0; i < navItems.length; i++) {
-    var item = navItems[i]
-    var id = '#' + $(item).attr('id')
-    var href = $(item).attr('href')
-
-    new ScrollMagic.Scene({triggerElement: href, triggerHook: 'onLeave', offset: -5, duration: $(href).height() })
-      .setClassToggle(id, "active")
-      // .addIndicators()
-      .addTo(controller);
-  }
 })
-
-// $(function() {
-//   $('.scroll-btn').click (function() {
-//     $('html, body').animate({scrollTop: $('section#about').offset().top }, 'slow');
-//     return false;
-//   });
-// });

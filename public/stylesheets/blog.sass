@@ -3,51 +3,50 @@
   margin: auto
   padding: 20px
   .post
+    border-top: 1px solid rgba(0,0,0,.5)
+    .date
+      font-family: $f-primary
+      font-size: 12px
+      color: rgba($c-gray, .6)
     h2
       font-size: 20px
       text-align: left
       text-transform: none
-    .bg-img
-      height: 100px
-      width: 100px
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: center
-      filter: grayscale(1)
     .tags
       font-family: $f-primary
       font-size: 12px
       span
         display: inline-block
-        padding: 2px 10px
+        padding: 3px 5px
         margin: 2px
-        margin-right: 0
+        margin-left: 0
         text-transform: uppercase
-        background: $c-mint-green
-        color: $c-white
+        border: 1px solid $c-orange
+        color: $c-orange
+        font-size: 10px
+    .btn
+      font-size: 10px
+      width: 100px
 
 
-@media screen and (min-width: 1024px)
+@media screen and (min-width: 640px)
   .blog-content
     .posts--grid
       display: flex
       flex-wrap: wrap
-      justify-content: space-between
       .post
-        position: relative
-        flex: 0 1 33%
-        padding: 10px
-        .bg-img
-          height: 200px
-          width: 100%
+        padding: 10px 0
+        margin: 10px
+        max-width: calc(50% - 20px)
+        height: 260px
+        .post--center
+          height: 150px
+
+@media screen and (min-width: 1024px)
+  .blog-content
+    .posts--grid
+      .post
+        max-width: calc(33% - 20px)
         .snippet
-          // height: 60px
-          // padding: 10px 0
           p
             margin: 0
-        .tags
-          position: absolute
-          bottom: 160px
-          left: 10px
-          // background: rgba(0,0,0,.5)
-          width: calc(100% - 20px)
