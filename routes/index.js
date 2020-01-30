@@ -2,6 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 var projects = [
+{
+    name: "KETTLER / Corporate Site",
+    link: "https://staging-kettler.leaselabs-staging.com/",
+    title: "KETTLER",
+    lang: "Angular, Rails, HAML, SCSS, JQuery",
+    features: "Custom corporate site with 20+ pages, built with about 15 modular/reusable components.",
+    image: "url(../images/kettler.png)"
+  },
   {
     name: "OXLY / Custom Site",
     link: "https://staging-oxly-at-the-merc-san-antonio-tx.leaselabs-staging.com/staging-oxly-at-the-merc-san-antonio-tx/",
@@ -68,11 +76,57 @@ var projects = [
   }
 ];
 
+posts = [
+  {
+    date: "09/28/2019",
+    title: "Blog post 1",
+    preview: "",
+    body: ""
+  },
+  {
+    date: "10/29/2019",
+    title: "Blog post 2",
+    preview: "",
+    body: ""
+  },
+  {
+    date: "10/29/2019",
+    title: "Blog post 3",
+    preview: "",
+    body: ""
+  },
+  {
+    date: "10/29/2019",
+    title: "Blog post 4",
+    preview: "",
+    body: ""
+  },
+  {
+    date: "10/29/2019",
+    title: "Blog Post 5",
+    preview: "",
+    body: ""
+  }
+];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
     title: 'Kelsey Edelstein | Web Developer',
     projects: projects
+  });
+});
+/* GET blog */
+router.get('/blog', function(req, res, next) {
+  res.render('blog', {
+    title: 'Kelsey Edelstein | Blog',
+    posts: posts
+  });
+});
+/* GET blog post */
+router.get('/blog/:id', function(req, res, next) {
+  res.render('post', {
+    post: posts[req.params.id]
   });
 });
 

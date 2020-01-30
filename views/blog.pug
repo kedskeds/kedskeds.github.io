@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  //- .bg-img(data-bg= post.image )
+  //- if post.tags
+  //-   .tags
+  //-     for tag in post.tags
+  //-       span= tag
+  .blog-content
+    h1 blog
+    .posts--grid
+      for post,i in posts
+        .post
+          .post--top
+            .date= post.date
+            if post.tags
+              .tags
+                for tag in post.tags
+                  span= tag
+          .post--center
+            h2= post.title
+            .preview
+              p= post.preview
+          .post--bottom
+            a.btn(href="/blog/" + i) Read More
