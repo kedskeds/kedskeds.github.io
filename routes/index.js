@@ -12,7 +12,7 @@ var projects = [
   },
   {
     name: "OXLY / Custom Site",
-    link: "https://staging-oxly-at-the-merc-san-antonio-tx.leaselabs-staging.com/staging-oxly-at-the-merc-san-antonio-tx/",
+    link: "https://www.oxlyapts.com/oxly-at-the-merc-san-antonio-tx/",
     title: "OXLY",
     lang: "Rails, HAML, SCSS, JQuery, ScrollMagic",
     features: "CMS-editable website with custom ScrollMagic animations and parallax.",
