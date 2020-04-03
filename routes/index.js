@@ -2,7 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 var projects = [
-{
+  {
+    name: "Targa / Corporate Site",
+    link: "https://staging-targa.leaselabs-staging.com/",
+    title: "Targa",
+    lang: "Angular, Rails, HAML, SCSS, JQuery, ScrollMagic, AOS",
+    features: "Custom corporate site.",
+    image: "url(../images/targa.png)"
+  },
+  {
     name: "KETTLER / Corporate Site",
     link: "https://staging-kettler.leaselabs-staging.com/",
     title: "KETTLER",
