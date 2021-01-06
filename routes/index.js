@@ -3,8 +3,15 @@ var router = express.Router();
 
 var projects = [
   {
+    name: "Northwestern Qatar / Annual Report",
+    link: "https://www.qatar.northwestern.edu/docs/publications/annual-report/2020/index.html",
+    title: "Northwestern Qatar",
+    lang: "Nuxt, Vue, Netlify",
+    image: "url(../images/nu-q.png)"
+  },
+  {
     name: "Targa / Corporate Site",
-    link: "https://staging-targa.leaselabs-staging.com/",
+    link: "https://www.targarealestate.com/",
     title: "Targa",
     lang: "Angular, Rails, HAML, SCSS, JQuery, ScrollMagic, AOS",
     features: "Custom corporate site.",
@@ -12,7 +19,7 @@ var projects = [
   },
   {
     name: "KETTLER / Corporate Site",
-    link: "https://staging-kettler.leaselabs-staging.com/",
+    link: "https://www.kettler.com/",
     title: "KETTLER",
     lang: "Angular, Rails, HAML, SCSS, JQuery",
     features: "Custom corporate site with 20+ pages, built with about 15 modular/reusable components.",
