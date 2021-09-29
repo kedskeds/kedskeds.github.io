@@ -18,3 +18,4 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: prod-promotion
+          title: d2p
