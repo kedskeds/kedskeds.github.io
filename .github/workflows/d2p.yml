@@ -19,3 +19,4 @@ jobs:
         with:
           branch: prod-promotion
           title: d2p
+          labels: Test Label 🌴, bug
