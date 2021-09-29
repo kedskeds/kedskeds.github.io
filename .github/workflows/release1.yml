@@ -1,21 +1,21 @@
-name: Create prod promotion pull request
+name: Create release-1 PR
 on:
   push:
     branches:
-      - dev
+      - prod
 jobs:
-  prodPromotion:
+  release1Promotion:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: prod
+          ref: release-1
       - name: Reset promotion branch
         run: |
-          git fetch origin dev:dev
-          git reset --hard dev
+          git fetch origin prod:prod
+          git reset --hard prod
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: prod-promotion
-          title: d2p
+          branch: release1-promotion
+          title: "Release 1: Creator-spring"
