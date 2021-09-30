@@ -33,7 +33,6 @@ function animateIn() {
 
 $(document).ready(function() {
   animateIn();
-  // console.log('test');
 
   writeCode();
   revealLines();
