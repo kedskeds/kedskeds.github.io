@@ -17,3 +17,8 @@ jobs:
           base: dev
           title: d2p
           labels: Test Label 🌴, bug
+          body: |
+            PR description:
+            - [Some link][1]
+            
+            [1]: https://www.google.com
