@@ -19,4 +19,9 @@ jobs:
         with:
           branch: prod-promotion
           title: d2p
+          body: |
+            Merging & deploying instructions:
+            - [Some link][1]
+
+            [1]: https://www.google.com
           labels: Test Label 🌴, bug
