@@ -12,3 +12,8 @@ jobs:
         with:
           branch: release-1
           title: "Release 1: Creator-spring"
+          body: |
+            PR description:
+            - [Some link][1]
+            
+            [1]: https://www.google.com
