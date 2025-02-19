@@ -17,9 +17,8 @@ jobs:
 
       - name: Set env vars
         id: set-env-vars
-        shell: bash  # Ensure using bash instead of default PowerShell
         run: |
-          echo "event_name=${{ github.event_name }}" | tee -a $GITHUB_ENV $GITHUB_OUTPUT
+          echo "event_name=${{ github.event_name }}" >> $GITHUB_OUTPUT
 
   print-env-vars:
     runs-on: windows-latest
