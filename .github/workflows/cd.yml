@@ -7,18 +7,13 @@ on:
 
 jobs:
   set-env-vars:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     outputs:
       event_name: ${{ steps.set-env-vars.outputs.event_name }}
     steps:
-      - name: Debug Event Name
-        run: |
-          echo "GITHUB EVENT NAME: ${{ github.event_name }}"
-
-      - name: Set env vars
+      - name: Set Github Environment Variables
         id: set-env-vars
-        run: |
-          echo "event_name=${{ github.event_name }}" >> $GITHUB_OUTPUT
+        uses: ./.github/actions/set-env-vars
 
   print-env-vars:
     runs-on: windows-latest

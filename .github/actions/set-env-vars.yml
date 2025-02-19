@@ -1,0 +1,13 @@
+name: "Set Environment Variables"
+description: "Set environment variables for the workflow run"
+
+outputs:
+  event_name: ${{ steps.set-vars.outputs.event_name }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set env vars
+      id: set-vars
+      run: |
+        echo "event_name=${{ github.event_name }}" >> $GITHUB_OUTPUT
