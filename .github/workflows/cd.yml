@@ -1,4 +1,4 @@
-name: Test Worflow
+name: Test Workflow
 on:
   push:
     branches:
@@ -15,7 +15,7 @@ jobs:
         id: set-env-vars
         run: |
           echo "event_name=${{ github.event_name }}" >> $GITHUB_ENV
-          echo ::set-output name=event_name::$event_name
+          echo "event_name=${{ github.event_name }}" >> $GITHUB_OUTPUT
 
   print-env-vars:
     runs-on: windows-latest
