@@ -11,16 +11,20 @@ jobs:
     outputs:
       event_name: ${{ steps.set-env-vars.outputs.event_name }}
     steps:
+      - name: Debug Event Name
+        run: |
+          echo "GITHUB EVENT NAME: ${{ github.event_name }}"
+
       - name: Set env vars
         id: set-env-vars
+        shell: bash  # Ensure using bash instead of default PowerShell
         run: |
-          echo "event_name=${{ github.event_name }}" >> $GITHUB_ENV
-          echo "event_name=${{ github.event_name }}" >> $GITHUB_OUTPUT
+          echo "event_name=${{ github.event_name }}" | tee -a $GITHUB_ENV $GITHUB_OUTPUT
 
   print-env-vars:
     runs-on: windows-latest
     needs: set-env-vars
     steps:
-      - name: Print env vars
+      - name: Print event_name
         run: |
-          echo "event_name: ${{ needs.set-env-vars.outputs.event_name }}"
+          echo "event_name from needs: ${{ needs.set-env-vars.outputs.event_name }}"
