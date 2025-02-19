@@ -1,0 +1,26 @@
+name: Test Worflow
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  set-env-vars:
+    runs-on: windows-latest
+    outputs:
+      event_name: ${{ steps.set-env-vars.outputs.event_name }}
+    steps:
+      - name: Set env vars
+        id: set-env-vars
+        run: |
+          echo "event_name=${{ github.event_name }}" >> $GITHUB_ENV
+          echo ::set-output name=event_name::$event_name
+
+  print-env-vars:
+    runs-on: windows-latest
+    needs: set-env-vars
+    steps:
+      - name: Print env vars
+        run: |
+          echo "event_name: ${{ needs.set-env-vars.outputs.event_name }}"
