@@ -22,11 +22,6 @@ jobs:
     runs-on: windows-latest
     needs: set-env-vars
     steps:
-      - name: Print variables
-        run: |
-          echo "event_name from needs: ${{ needs.set-env-vars.outputs.event_name }}"
-          echo "ref_name from needs: ${{ needs.set-env-vars.outputs.ref_name }}"
-
       - name: Check if dev branch
         if: "${{ needs.set-env-vars.outputs.ref_name}}" == 'refs/heads/dev'
         run: echo "This is the dev branch"
