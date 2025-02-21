@@ -5,6 +5,9 @@ outputs:
   event_name:
     description: "GitHub event name"
     value: ${{ steps.set-vars.outputs.event_name }}
+  ref_name:
+    description: "GitHub ref name"
+    value: ${{ steps.set-vars.outputs.ref_name }}
 
 runs:
   using: "composite"
@@ -14,3 +17,4 @@ runs:
       shell: bash
       run: |
         echo "event_name=${{ github.event_name }}" >> "$GITHUB_OUTPUT"
+        echo "ref_name=${{ github.ref }}" >> "$GITHUB_OUTPUT"

@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       event_name: ${{ steps.set-env-vars.outputs.event_name }}
+      ref_name: ${{ steps.set-env-vars.outputs.ref_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,6 +25,10 @@ jobs:
       - name: Print event_name
         run: |
           echo "event_name from needs: ${{ needs.set-env-vars.outputs.event_name }}"
+          echo "ref_name from needs: ${{ needs.set-env-vars.outputs.ref_name }}"
+      - name: Check ref name
+        if: "${{ needs.set-env-vars.outputs.ref_name }}" == 'refs/heads/dev'
+        run: echo "This is the dev branch"
 
   job1:
     runs-on: ubuntu-latest
