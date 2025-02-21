@@ -11,6 +11,7 @@ jobs:
     outputs:
       event_name: ${{ steps.set-env-vars.outputs.event_name }}
       ref_name: ${{ steps.set-env-vars.outputs.ref_name }}
+      repo_name: ${{ steps.set-env-vars.outputs.repo_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,12 +20,17 @@ jobs:
         uses: ./.github/actions/set-env-vars
 
   print-env-vars:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: set-env-vars
     steps:
       - name: Check if dev branch
         if: "${{ needs.set-env-vars.outputs.ref_name == 'refs/heads/dev'}}"
         run: echo "This is the dev branch"
+      - name: Print env vars
+        run: |
+          echo "Event Name: ${{ needs.set-env-vars.outputs.event_name }}"
+          echo "Ref Name: ${{ needs.set-env-vars.outputs.ref_name }}"
+          echo "Repo Name: ${{ needs.set-env-vars.outputs.repo_name }}"
 
   job1:
     runs-on: ubuntu-latest
