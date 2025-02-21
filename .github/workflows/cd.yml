@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       event_name: ${{ steps.set-env-vars.outputs.event_name }}
+      ref_name: ${{ steps.set-env-vars.outputs.ref_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,9 +22,10 @@ jobs:
     runs-on: windows-latest
     needs: set-env-vars
     steps:
-      - name: Print event_name
+      - name: Print variables
         run: |
           echo "event_name from needs: ${{ needs.set-env-vars.outputs.event_name }}"
+          echo "ref_name from needs: ${{ needs.set-env-vars.outputs.ref_name }}"
 
   job1:
     runs-on: ubuntu-latest
