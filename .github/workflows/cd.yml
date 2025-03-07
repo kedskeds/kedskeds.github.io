@@ -8,11 +8,16 @@ on:
 jobs:
   set-env-vars:
     runs-on: ubuntu-latest
+    container:
+      image: cgr.dev/chainguard/node:latest
+      options: --user root
     outputs:
       event_name: ${{ steps.set-env-vars.outputs.event_name }}
       ref_name: ${{ steps.set-env-vars.outputs.ref_name }}
       repo_name: ${{ steps.set-env-vars.outputs.repo_name }}
     steps:
+      - name: Check user
+        run: whoami
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set Github Environment Variables
